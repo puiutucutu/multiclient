@@ -98,11 +98,11 @@ class GameKernel {
 
   /**
    * @param {string} playerName
-   * @param {number} buyIn
+   * @param {number} capital
    */
-  addPlayer(playerName, buyIn) {
+  addPlayer(playerName, capital) {
     const id = makeUniqueId();
-    const player = new Player(id, playerName, buyIn);
+    const player = new Player(id, playerName, capital);
 
     this.gameProperties = {
       ...this.gameProperties,
