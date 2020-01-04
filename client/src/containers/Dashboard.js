@@ -41,7 +41,7 @@ class Dashboard extends React.Component {
 
   render() {
     return (
-      <div className="db pa2">
+      <div className="db pa3">
         <h1>Dashboard</h1>
         <h1 className="f1 b red">{cardRankUnicode.diamonds.EIGHT}</h1>
 
