@@ -76,12 +76,12 @@ const defaultSettings = {
  *
  */
 class GameKernel {
+  currentGameState = BETTING;
+
   constructor(settings) {
     this.gameProperties = { ...defaultGameProperties };
     this.settings = { ...defaultSettings, ...settings };
   }
-
-  currentGameState = BETTING;
 
   init() {
     this.deck = shuffle(makeDeck());
