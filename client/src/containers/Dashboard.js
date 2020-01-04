@@ -4,10 +4,18 @@ import "tachyons/css/tachyons.min.css";
 import { cards } from "../../../shared/cards";
 import { cardRanks, suits } from "../../../shared/types";
 import * as cardRankUnicode from "../../../shared/cardRankUnicode";
+import { makeDeck } from "../../../server/functions";
+import { GameKernel } from "../../../server/GameKernel";
 
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
+
+    const gameKernel = new GameKernel();
+    gameKernel.init();
+
+    window.gameKernel = gameKernel;
+    console.log(gameKernel);
   }
 
   onBetClick(e) {
