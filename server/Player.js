@@ -33,7 +33,7 @@ class Player {
    * @return {number}
    */
   getHandValue() {
-    getHandValues();
+    getHandValues([cards["CLUBS"].ace, cards["CLUBS"].ace, cards["CLUBS"].ten]);
 
     return this.hand.reduce(function(total, card) {
       if (card.rank === cardRanks.ACE) {
@@ -51,9 +51,7 @@ class Player {
 /**
  * Handle card value resolving in such cases where the user has multiple aces.
  */
-function getHandValues() {
-  const hand = [cards["CLUBS"].ace, cards["CLUBS"].ace, cards["CLUBS"].ten];
-
+function getHandValues(hand {
   const handPreparedForCartesian = hand.map(card =>
     getCardValueFromCardRank(card.getRank())
   );
