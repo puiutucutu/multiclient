@@ -101,12 +101,13 @@ class GameKernel {
       }
       case gameState.DEALING: {
         this.handleGameStateDealing();
+        break;
       }
       case gameState.PLAYER: {
-        this.dealingRound(playerId);
+        break;
       }
       case gameState.DEALER: {
-        this.dealingRound(playerId);
+        break;
       }
       default: {
         console.log("switching to default");
