@@ -4,6 +4,11 @@ class Player {
    */
   hand = [];
 
+  /**
+   * @param {string} id
+   * @param {string} name
+   * @param {number} capital
+   */
   constructor(id, name, capital) {
     this.id = id;
     this.name = name;
