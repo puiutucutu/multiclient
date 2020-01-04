@@ -98,9 +98,12 @@ class GameKernel {
    * @param {DealingActions} action
    */
   dealingRound(playerId, action) {
-    if ([])
-      if (action === HIT) {
-      }
+    if (!dealingActions.includes(action)) {
+      throw new Error("Invalid player action requested");
+    }
+
+    if (action === HIT) {
+    }
 
     if (action === STAND) {
     }
