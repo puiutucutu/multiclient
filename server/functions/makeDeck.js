@@ -1,41 +1,12 @@
-import { shuffle } from "./shuffle";
+import { cardRanks, suits } from "../../shared/types";
+import { Card } from "../../shared/Card";
 
-function makeDeck(deckSize) {
-  if (!deckSize) {
-    throw new Error("missing decksize");
-  }
-
-  const cardsRanks = [];
-  const allCards = [];
-
-  const cards = [
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "J",
-    "Q",
-    "K",
-    "A"
-  ];
-  const deck = [];
-  for (let i = 0; i < deckSize; i++) {
-    deck.push(cards);
-    deck.push(cards);
-    deck.push(cards);
-    deck.push(cards);
-  }
-
-  const xs = deck.reduce(function(acc, xs) {
-    return acc.concat(xs);
-  }, []);
-
-  return shuffle(xs);
+function makeDeck() {
+  return cardRanks.map(function(cardRank) {
+    return suits.map(function(suit) {
+      return new Card(cardRank, suit);
+    });
+  });
 }
 
 export { makeDeck };
