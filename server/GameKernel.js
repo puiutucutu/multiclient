@@ -105,6 +105,10 @@ class GameKernel {
     if (action === HIT) {
       const card = this.drawCard();
 
+      // add card to player's hand
+      // check if bust, if so end player turn immediately and/or proceed to
+      // next player or next game stage
+
       return card; // i.e., broadcast to connected clients
     }
 
