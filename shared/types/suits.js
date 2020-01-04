@@ -1,10 +1,10 @@
 /**
- * @typedef {SPADES|CLUBS|HEARTS|DIAMONDS} Suit
+ * @typedef {CLUBS|DIAMONDS|HEARTS|SPADES} Suit
  */
 
-const SPADES = "SPADES";
 const CLUBS = "CLUBS";
-const HEARTS = "HEARTS";
 const DIAMONDS = "DIAMONDS";
+const HEARTS = "HEARTS";
+const SPADES = "SPADES";
 
-export { SPADES, CLUBS, HEARTS, DIAMONDS };
+export { CLUBS, DIAMONDS, HEARTS, SPADES };
