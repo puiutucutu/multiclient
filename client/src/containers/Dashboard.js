@@ -28,7 +28,8 @@ class Dashboard extends React.Component {
   }
 
   onDealClick(e) {
-    console.log("onBetClick");
+    console.log("onDealClick");
+    this.gameKernel.handleGameStateDealing();
   }
 
   onHit(e) {
