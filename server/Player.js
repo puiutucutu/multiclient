@@ -33,7 +33,13 @@ class Player {
    * @return {number}
    */
   getHandValue() {
-    getHandValues([cards["CLUBS"].ace, cards["CLUBS"].ace, cards["CLUBS"].ten]);
+    let hand = this.getHand();
+    hand = [cards["CLUBS"].ace, cards["CLUBS"].ace, cards["CLUBS"].ten]
+
+    const handValues = getHandValues(hand)
+    console.log(handValues);
+    console.log(handValues);
+    console.log(handValues);
 
     return this.hand.reduce(function(total, card) {
       if (card.rank === cardRanks.ACE) {
@@ -60,28 +66,28 @@ function getHandValues(hand) {
     hand.reduce((sum, a) => sum + a, 0)
   );
 
-  console.log(
-    "%c hand",
-    "background: red; color: white; font-weight: bold",
-    hand
-  );
-  console.log(
-    "%c handPreparedForCartesian",
-    "background: red; color: white; font-weight: bold",
-    handPreparedForCartesian
-  );
-  console.log(
-    "%c possibleHands",
-    "background: red; color: white; font-weight: bold",
-    possibleHands
-  );
-  console.log(
-    "%c possibleHandValues",
-    "background: red; color: white; font-weight: bold",
-    possibleHandValues
-  );
+  // console.log(
+  //   "%c hand",
+  //   "background: red; color: white; font-weight: bold",
+  //   hand
+  // );
+  // console.log(
+  //   "%c handPreparedForCartesian",
+  //   "background: red; color: white; font-weight: bold",
+  //   handPreparedForCartesian
+  // );
+  // console.log(
+  //   "%c possibleHands",
+  //   "background: red; color: white; font-weight: bold",
+  //   possibleHands
+  // );
+  // console.log(
+  //   "%c possibleHandValues",
+  //   "background: red; color: white; font-weight: bold",
+  //   possibleHandValues
+  // );
 
-  return possibleHandValues;
+  return [...new Set(possibleHandValues)];
 }
 
 /**
