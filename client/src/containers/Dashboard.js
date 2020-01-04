@@ -14,12 +14,17 @@ class Dashboard extends React.Component {
     console.log("onBetClick");
   }
 
+  onDealClick(e) {
+    console.log("onBetClick");
+  }
+
   render() {
     return (
       <div>
         <h1>Dashboard</h1>
         <h1 className={"f1 b red"}>{cardRankUnicode.diamonds.EIGHT}</h1>
         <button onClick={this.onBetClick}>Bet Amount</button>
+        <button onClick={this.onBetClick}>Deal</button>
       </div>
     );
   }
