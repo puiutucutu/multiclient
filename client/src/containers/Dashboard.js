@@ -58,7 +58,7 @@ class Dashboard extends React.Component {
 
         <div className="db pa2 ba b--black">
           <button onClick={this.onBetClick}>Bet</button>
-          <button onClick={this.onBetClick}>Deal</button>
+          <button onClick={this.onDealClick}>Deal</button>
           <button onClick={this.onHit}>Hit</button>
           <button onClick={this.onStand}>Stand</button>
         </div>
