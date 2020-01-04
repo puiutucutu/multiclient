@@ -98,11 +98,18 @@ function findHandValuePermutations(hand) {
  * @return {array}
  * @example
  *
- * cartesianProduct([["1", "11"], ["1", "11"], ["10"]]); //=> [[1,1,10],[1,11,10],[11,1,10],[11,11,10]]
+ * cartesianProduct([["1", "11"], ["1", "11"], ["10"]]); //=>
+ *   [[1,1,10],[1,11,10],[11,1,10],[11,11,10]]
  */
 function cartesianProduct(xs) {
   return xs.reduce(function(a, b) {
-    return a.reduce((r, v) => r.concat(b.map(w => [].concat(v, w))), []);
+    return a.reduce(function(r, v) {
+      return r.concat(
+        b.map(function(w) {
+          return [].concat(v, w);
+        })
+      );
+    }, []);
   });
 }
 
