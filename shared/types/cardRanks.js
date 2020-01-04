@@ -2,32 +2,32 @@
  * @typedef {ACE|KING|QUEEN|JACK|TEN|NINE|EIGHT|SEVEN|SIX|FIVE|FOUR|THREE|TWO} CardRank
  */
 
-const ACE = "ACE";
-const KING = "KING";
-const QUEEN = "QUEEN";
-const JACK = "JACK";
-const TEN = "TEN";
-const NINE = "NINE";
-const EIGHT = "EIGHT";
-const SEVEN = "SEVEN";
-const SIX = "SIX";
-const FIVE = "FIVE";
-const FOUR = "FOUR";
-const THREE = "THREE";
 const TWO = "TWO";
+const THREE = "THREE";
+const FOUR = "FOUR";
+const FIVE = "FIVE";
+const SIX = "SIX";
+const SEVEN = "SEVEN";
+const EIGHT = "EIGHT";
+const NINE = "NINE";
+const TEN = "TEN";
+const JACK = "JACK";
+const QUEEN = "QUEEN";
+const KING = "KING";
+const ACE = "ACE";
 
 export {
-  ACE,
-  KING,
-  QUEEN,
-  JACK,
-  TEN,
-  NINE,
-  EIGHT,
-  SEVEN,
-  SIX,
-  FIVE,
-  FOUR,
+  TWO,
   THREE,
-  TWO
+  FOUR,
+  FIVE,
+  SIX,
+  SEVEN,
+  EIGHT,
+  NINE,
+  TEN,
+  JACK,
+  QUEEN,
+  KING,
+  ACE
 };
