@@ -1,9 +1,9 @@
 # blackjack-multiplayer
 
-- clubs ♣
-- diamonds ♦
-- hearts ♥
-- spades ♠
+- ♣ - clubs
+- ♦ - diamonds
+- ♥ - hearts
+- ♠ - spades
 
 ## Links
 
