@@ -54,17 +54,11 @@ class Player {
 function cardValueResolver() {
   const hand = [cards["CLUBS"].ace, cards["CLUBS"].ace, cards["CLUBS"].ten];
 
-  // prepare for cartesian
-
   const handPreparedForCartesian = hand.map(card =>
     getCardValueFromCardRank(card.getRank())
   );
-
-  // const possibleHandValues = cartesianProduct(
-  //   [handPreparedForCartesian]
-  // );
-
-  const possibleHandValues = cartesianProduct(handPreparedForCartesian);
+  const possibleHands = cartesianProduct(handPreparedForCartesian);
+  const possibleHandValues = [];
 
   console.log(
     "%c handPreparedForCartesian",
