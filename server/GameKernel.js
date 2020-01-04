@@ -96,18 +96,11 @@ class GameKernel {
     // determine if the cut card is hit
     switch (this.currentGameState) {
       case gameState.BETTING: {
-        // await all players to set their initial bet
-        console.log("switching to betting round");
+        this.handleGameStateBetting();
         break;
       }
       case gameState.DEALING: {
-        console.log("GAME_STATE = DEALING");
-        // deal out two cards to every connected player
-        const that = this;
-        this.gameProperties.players.forEach(function(player) {
-          player.addCardToHand(that.drawCard());
-          player.addCardToHand(that.drawCard());
-        });
+        this.handleGameStateDealing();
       }
       case gameState.PLAYER: {
         this.dealingRound(playerId);
@@ -119,6 +112,21 @@ class GameKernel {
         console.log("switching to default");
       }
     }
+  }
+
+  handleGameStateBetting() {
+    // await all players to set their initial bet
+    console.log("GAME STATE >>> BETTING");
+  }
+
+  handleGameStateDealing() {
+    console.log("GAME STATE >>> DEALING");
+    // deal out two cards to every connected player
+    const that = this;
+    this.gameProperties.players.forEach(function(player) {
+      player.addCardToHand(that.drawCard());
+      player.addCardToHand(that.drawCard());
+    });
   }
 
   addCardToPlayerWithId(playerId, card) {
