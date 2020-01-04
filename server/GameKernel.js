@@ -118,7 +118,7 @@ class GameKernel {
       return player.id === playerId;
     });
 
-    return found.slice(0, 1);
+    return head(found);
   }
 
   /**
