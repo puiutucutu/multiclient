@@ -63,3 +63,5 @@ const cards = {
     ace: new Card(cardRanks.ACE, suits.SPADES)
   }
 };
+
+export { cards };
