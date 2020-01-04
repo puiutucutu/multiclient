@@ -30,8 +30,7 @@ class Player {
 
   getHandValue() {
     return this.hand.reduce(function(total, card) {
-      const cardType = card.cardType;
-      const cardValue = getCardValueFromCardRank(card);
+      const cardValue = getCardValueFromCardRank(card.cardType);
       return total + cardValue;
     }, 0);
   }
