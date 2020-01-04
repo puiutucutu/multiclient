@@ -8,19 +8,18 @@ import { makeDeck } from "../../../server/functions";
 import { GameKernel } from "../../../server/GameKernel";
 
 class Dashboard extends React.Component {
+  state = {
+    abc: 123
+  };
+
   constructor(props) {
     super(props);
-    this.state = {};
 
     const gameKernel = new GameKernel();
     gameKernel.init();
 
     window.gameKernel = gameKernel;
     console.log(gameKernel);
-  }
-
-  state = {
-    abc: 123
   }
 
   onBetClick(e) {
