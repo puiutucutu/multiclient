@@ -109,6 +109,7 @@ class GameKernel {
     }
 
     if (action === STAND) {
+      // continue on to next player if available, otherwise the next game stage
     }
 
     if (action === DOUBLE) {
