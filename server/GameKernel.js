@@ -110,10 +110,11 @@ class GameKernel {
     console.log("GAME STATE >>> BETTING");
   }
 
+  /**
+   * Deal out two cards to every connected player.
+   */
   handleGameStateDealing() {
     console.log("GAME STATE >>> DEALING");
-
-    // deal out two cards to every connected player
     const that = this;
     this.gameProperties.players.forEach(function(player) {
       player.addCardToHand(that.drawCard());
