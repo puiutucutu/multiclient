@@ -1,5 +1,17 @@
 import { makeDeck, shuffle } from "./functions";
 
+const defaultGameProperties = {
+  seats: {
+    1: null,
+    2: null,
+    3: null,
+    4: null,
+    5: null,
+    6: null,
+    7: null
+  }
+};
+
 const defaultSettings = {
   shoeSize: 6,
   maxHandsPerRound: 7,
@@ -17,7 +29,9 @@ const defaultSettings = {
 
 class GameKernel {
   constructor(settings) {
+    this.gameProperties = { ...defaultGameProperties };
     this.settings = { ...defaultSettings, ...settings };
+    this.players = [];
   }
 
   init() {
@@ -26,6 +40,21 @@ class GameKernel {
   }
 
   addPlayer(playerName, buyInAmount) {}
+
+  deal() {}
+
+  getOccupiedSeats() {}
+
+  getUnoccupiedSeats() {
+    const unoccupiedSeats = [];
+    for (let seatId in this.properties.seats) {
+      if (!!this.settings.seats[seatId]) {
+        availableSeats.push(seatId);
+      }
+    }
+
+    return unoccupiedSeats;
+  }
 
   isCardsInDeck() {
     return this.deck.length > 0;
