@@ -85,7 +85,6 @@ class GameKernel {
 
   init() {
     this.shuffleDeck();
-    console.log(this.deck);
   }
 
   shuffleDeck() {
