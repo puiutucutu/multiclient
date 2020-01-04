@@ -1,12 +1,27 @@
 import { makeDeck, shuffle } from "./functions";
 
+const defaultSettings = {
+  shoeSize: 6,
+  maxHandsPerRound: 7,
+  players: [],
+  seats: {
+    1: null,
+    2: null,
+    3: null,
+    4: null,
+    5: null,
+    6: null,
+    7: null
+  }
+};
+
 class GameKernel {
   constructor(settings) {
-    this.settings = settings;
+    this.settings = { ...defaultSettings, ...settings };
   }
 
   init() {
-    this.deck = shuffle(makeDeck())
+    this.deck = shuffle(makeDeck());
     console.log(this.deck);
   }
 
