@@ -12,11 +12,11 @@ class GameKernel {
   addPlayer(playerName, buyInAmount) {}
 
   isCardsInDeck() {
-    return this.currentDeck.length > 0;
+    return this.deck.length > 0;
   }
 
   getCardsRemaining() {
-    return this.currentDeck.length;
+    return this.deck.length;
   }
 
   drawCard() {
@@ -24,8 +24,8 @@ class GameKernel {
       throw new Error("No more cards remain to be drawn from");
     }
 
-    const [x, ...xs] = this.currentDeck;
-    this.currentDeck = xs;
+    const [x, ...xs] = this.deck;
+    this.deck = xs;
 
     return x;
   }
