@@ -109,7 +109,6 @@ class GameKernel {
   }
 
   /**
-   *
    * @param {string} playerId
    * @return {Player}
    */
