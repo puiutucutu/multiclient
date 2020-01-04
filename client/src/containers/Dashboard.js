@@ -54,6 +54,7 @@ class Dashboard extends React.Component {
         <div className="db pa2 mb2 ba b--black br2 ba-light-grey">
           <span className="db b f5">Your Hand</span>
           <span className="db">KQ</span>
+          {this.renderPlayerHand()}
         </div>
 
         <div className="db pa2 ba b--black">
@@ -64,6 +65,14 @@ class Dashboard extends React.Component {
         </div>
       </div>
     );
+  }
+
+  renderPlayerHand() {
+    const player = this.gameKernel.gameProperties.players[0];
+    const playerHand = player.getHand();
+    console.log(playerHand);
+
+    return <div className="">PLAYER HAND GOES HERE</div>;
   }
 }
 
