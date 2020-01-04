@@ -1,4 +1,7 @@
 class Card {
+  cardRank;
+  suit;
+
   /**
    * @param {CardRank} cardRank
    * @param {Suit} suit
