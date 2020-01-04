@@ -96,6 +96,7 @@ function findHandValuePermutations(hand) {
  * @param {array} xs
  * @return {array}
  * @example
+ * @see https://stackoverflow.com/a/4331218
  *
  * cartesianProduct([["1", "11"], ["1", "11"], ["10"]]); //=>
  *   [[1,1,10],[1,11,10],[11,1,10],[11,11,10]]
