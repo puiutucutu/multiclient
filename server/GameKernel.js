@@ -26,6 +26,7 @@ class GameKernel {
 
     const [x, ...xs] = this.currentDeck;
     this.currentDeck = xs;
+
     return x;
   }
 }
