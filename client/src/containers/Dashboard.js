@@ -17,6 +17,7 @@ class Dashboard extends React.Component {
 
     const gameKernel = new GameKernel();
     gameKernel.init();
+    gameKernel.addPlayer("John Smith", 1000);
 
     window.gameKernel = gameKernel;
     console.log(gameKernel);
@@ -45,7 +46,12 @@ class Dashboard extends React.Component {
         <h1 className="f1 b red">{cardRankUnicode.diamonds.EIGHT}</h1>
 
         <div className="db pa2 mb2 ba b--black br2 ba-light-grey">
-          <span className="db b f5">Current Hand</span>
+          <span className="db b f5">Dealer's Hand</span>
+          <span className="db">KQ</span>
+        </div>
+
+        <div className="db pa2 mb2 ba b--black br2 ba-light-grey">
+          <span className="db b f5">Your Hand</span>
           <span className="db">KQ</span>
         </div>
 
