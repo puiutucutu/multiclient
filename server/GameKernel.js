@@ -122,7 +122,7 @@ class GameKernel {
   }
 
   addCardToPlayerWithId(playerId, card) {
-    const player = this.getPlayerWithId(playerId);
+    const player = this.getPlayerById(playerId);
     player.addCardToHand(card);
   }
 
@@ -130,7 +130,7 @@ class GameKernel {
    * @param {string} playerId
    * @return {Player}
    */
-  getPlayerWithId(playerId) {
+  getPlayerById(playerId) {
     const found = this.gameProperties.players.filter(function(player) {
       return player.id === playerId;
     });
