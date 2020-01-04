@@ -6,6 +6,10 @@ function makeUniqueId() {
   return uuid();
 }
 
+function head(xs) {
+  return xs.slice(0, 1);
+}
+
 /**
  * @typedef {HIT|STAND|DOUBLE} DealingActions
  */
