@@ -13,7 +13,9 @@ class Player {
   /**
    * @param {Card} card
    */
-  addCardToHand(card) {}
+  addCardToHand(card) {
+    this.hand = [...this.hand, card];
+  }
 
   resetHand() {
     this.hand = [];
