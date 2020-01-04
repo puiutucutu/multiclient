@@ -47,6 +47,10 @@ class GameKernel {
     console.log(this.deck);
   }
 
+  play() {
+    // determine if the cut card is hit
+  }
+
   addPlayer(playerName, buyInAmount) {}
 
   /**
