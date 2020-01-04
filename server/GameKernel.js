@@ -1,4 +1,4 @@
-import uuidv4 from "uuid/v4";
+import uuid4 from "uuid/v4";
 import { makeDeck, shuffle } from "./functions";
 
 function makeUniqueId() {
