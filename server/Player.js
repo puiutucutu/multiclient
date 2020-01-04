@@ -51,7 +51,7 @@ class Player {
 /**
  * Handle card value resolving in such cases where the user has multiple aces.
  */
-function getHandValues(hand {
+function getHandValues(hand) {
   const handPreparedForCartesian = hand.map(card =>
     getCardValueFromCardRank(card.getRank())
   );
