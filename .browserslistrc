@@ -1,4 +1,2 @@
-{
-  "targets": "> 0.25%, not dead"
-}
-
+defaults
+not IE 11
