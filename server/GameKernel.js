@@ -81,7 +81,7 @@ class GameKernel {
     this.settings = { ...defaultSettings, ...settings };
   }
 
-  currentRound = "betting";
+  currentGameState = BETTING;
 
   init() {
     this.deck = shuffle(makeDeck());
@@ -90,7 +90,7 @@ class GameKernel {
 
   play(playerId) {
     // determine if the cut card is hit
-    switch (this.currentRound) {
+    switch (this.currentGameState) {
       case "betting": {
         // await all players to set their initial bet
         console.log("switching to betting round");
