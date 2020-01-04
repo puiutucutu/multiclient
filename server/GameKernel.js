@@ -33,12 +33,14 @@ const defaultSettings = {
 };
 
 /**
+ *
  * Game Stages:
  *
  * 1 - Betting
  * 2 - Dealing (each player gets two cards, dealer gets one up and one down card)
  * 2 - Player turn (each player attempts to improve their hand)
  * 3 - Dealer turn (dealer attempts to make a hand)
+ *
  */
 class GameKernel {
   constructor(settings) {
