@@ -15,11 +15,11 @@ class Dashboard extends React.Component {
   constructor(props) {
     super(props);
 
-    const gameKernel = new GameKernel();
-    gameKernel.init();
-    gameKernel.addPlayer("John Smith", 1000);
+    this.gameKernel = new GameKernel();
+    this.gameKernel.init();
+    this.gameKernel.addPlayer("John Smith", 1000);
 
-    window.gameKernel = gameKernel;
+    window.gameKernel = this.gameKernel;
     console.log(gameKernel);
   }
 
