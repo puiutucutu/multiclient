@@ -1,4 +1,4 @@
-import { makeDeck } from "./functions";
+import { makeDeck, shuffle } from "./functions";
 
 class GameKernel {
   constructor(settings) {
@@ -6,7 +6,8 @@ class GameKernel {
   }
 
   init() {
-    this.deck = makeDeck();
+    this.deck = shuffle(makeDeck())
+    console.log(this.deck);
   }
 
   addPlayer(playerName, buyInAmount) {}
