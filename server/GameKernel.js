@@ -239,12 +239,8 @@ class GameKernel {
 
   drawCard() {
     if (!this.isCardsInDeck()) {
-      throw new Error("No more cards remain to be drawn from");
-    }
-
-    if (!this.isCardsInDeck()) {
-      // reshuffle deck
-      this.s;
+      console.log("No more cards left to drawn from; shuffling deck");
+      this.shuffleDeck();
     }
 
     const [x, ...xs] = this.deck;
