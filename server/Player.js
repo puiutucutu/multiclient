@@ -44,7 +44,7 @@ class Player {
 /**
  * Handle card value resolving in such cases where the user has multiple aces.
  *
- * @param {Card[]}
+ * @param {Card[]} hand
  * @return {number[]}
  */
 function getHandValues(hand) {
