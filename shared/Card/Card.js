@@ -1,5 +1,5 @@
 class Card {
-  cardRank;
+  rank;
   suit;
 
   /**
