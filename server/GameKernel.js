@@ -6,6 +6,14 @@ function makeUniqueId() {
   return uuid();
 }
 
+/**
+ * @typedef {HIT|STAND|DOUBLE} DealingActions
+ */
+
+const HIT = "HIT";
+const STAND = "STAND";
+const DOUBLE = "DOUBLE";
+
 const defaultGameProperties = {
   players: [],
   seats: {
@@ -83,7 +91,7 @@ class GameKernel {
    */
   bettingRound() {}
 
-  dealingRound() {}
+  dealingRound(playerId, action) {}
 
   playRound() {}
 
