@@ -1,15 +1,11 @@
 function shuffle(array) {
   let counter = array.length;
-
-  // While there are elements in the array
   while (counter > 0) {
-    // Pick a random index
-    let index = Math.floor(Math.random() * counter);
+    // while there are elements in the array
+    let index = Math.floor(Math.random() * counter); // pick a random index
+    counter--; // decrease counter by 1
 
-    // Decrease counter by 1
-    counter--;
-
-    // And swap the last element with it
+    // swap the last element with it
     let temp = array[counter];
     array[counter] = array[index];
     array[index] = temp;
