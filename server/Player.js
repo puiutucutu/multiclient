@@ -30,23 +30,10 @@ class Player {
   }
 
   /**
-   * @return {number}
+   * @return {number[]}
    */
   getHandValue() {
-    let hand = this.getHand();
-    hand = [cards["CLUBS"].ace, cards["CLUBS"].ace, cards["CLUBS"].ten]
-
-    const handValues = getHandValues(hand)
-    console.log(handValues);
-    console.log(handValues);
-    console.log(handValues);
-
-    return this.hand.reduce(function(total, card) {
-      if (card.rank === cardRanks.ACE) {
-      }
-      const cardValue = getCardValueFromCardRank(card.rank);
-      return total + cardValue;
-    }, 0);
+    return getHandValues(this.getHand());
   }
 
   resetHand() {
