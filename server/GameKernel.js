@@ -27,7 +27,7 @@ const dealingActions = [HIT, STAND, DOUBLE];
 const BETTING = "BETTING";
 const DEALING = "DEALING";
 const PLAYER = "PLAYER";
-const DEALER = "DEALING";
+const DEALER = "DEALER";
 
 const gameState = { BETTING, DEALING, PLAYER, DEALER };
 
