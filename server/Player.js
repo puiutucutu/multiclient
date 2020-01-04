@@ -33,6 +33,9 @@ class Player {
    */
   getHandValue() {
     return this.hand.reduce(function(total, card) {
+      if (card.cardType === cardRanks.ACE) {
+
+      }
       const cardValue = getCardValueFromCardRank(card.cardType);
       return total + cardValue;
     }, 0);
@@ -49,7 +52,7 @@ class Player {
  */
 function getCardValueFromCardRank(cardRank) {
   const cardRankToValueDict = {
-    [cardRanks.ACE]: 2,
+    [cardRanks.ACE]: [1,11],
     [cardRanks.TWO]: 2,
     [cardRanks.THREE]: 3,
     [cardRanks.FOUR]: 4,
