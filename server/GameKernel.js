@@ -20,6 +20,15 @@ const DOUBLE = "DOUBLE";
 
 const dealingActions = [HIT, STAND, DOUBLE];
 
+/**
+ * @typedef {BETTING|DEALING|PLAYER|DEALER} GameStates
+ */
+
+const BETTING = "BETTING";
+const DEALING = "DEALING";
+const PLAYER = "PLAYER";
+const DEALER = "DEALING";
+
 const defaultGameProperties = {
   players: [],
   seats: {
@@ -77,13 +86,24 @@ class GameKernel {
     console.log(this.deck);
   }
 
-  play() {
+  play(playerId) {
     // determine if the cut card is hit
     switch (this.currentRound) {
       case "betting": {
         // await all players to set their initial bet
         console.log("switching to betting round");
         break;
+      }
+      case "dealing": {
+        console.log("GAME_STATE = DEALING");
+        // deal out two cards to every connected player
+        this.gameProperties.players.forEach(function(player) {
+          player[0].addCardToHand(this.drawCard());
+          player.addCardToHand(this.drawCard());
+        });
+      }
+      case "player": {
+        this.dealingRound(playerId);
       }
       default: {
         console.log("switching to default");
