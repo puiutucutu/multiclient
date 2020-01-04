@@ -96,9 +96,13 @@ class GameKernel {
    */
   reconciliationRound() {}
 
-  addPlayer(playerName, capital) {
+  /**
+   * @param {string} playerName
+   * @param {number} buyIn
+   */
+  addPlayer(playerName, buyIn) {
     const id = makeUniqueId();
-    const player = new Player(id, playerName, capital);
+    const player = new Player(id, playerName, buyIn);
 
     this.gameProperties = {
       ...this.gameProperties,
