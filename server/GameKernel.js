@@ -91,21 +91,9 @@ class GameKernel {
     }
   }
 
-  addCardToPlayerWithId(playerId) {
-    const playerId = makeUniqueId();
+  addCardToPlayerWithId(playerId, card) {
     const player = this.getPlayerWithId(playerId);
-
-    this.gameProperties;
-
-    // assign them to the first seat for now
-    this.gameProperties = {
-      ...this.gameProperties,
-      players: [...this.gameProperties.players, player],
-      seats: {
-        ...this.gameProperties.seats,
-        1: playerId
-      }
-    };
+    player.addCardToHand(card);
   }
 
   /**
