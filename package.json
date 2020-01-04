@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "run": "esm node ./server/index.js"
+    "start:server": "node -r esm ./server/index.js"
   },
   "repository": {
     "type": "git",
