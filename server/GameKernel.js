@@ -84,8 +84,12 @@ class GameKernel {
   }
 
   init() {
-    this.deck = shuffle(makeDeck());
+    this.shuffleDeck();
     console.log(this.deck);
+  }
+
+  shuffleDeck() {
+    this.deck = shuffle(makeDeck());
   }
 
   play(playerId) {
@@ -99,9 +103,10 @@ class GameKernel {
       case gameState.DEALING: {
         console.log("GAME_STATE = DEALING");
         // deal out two cards to every connected player
+        const that = this;
         this.gameProperties.players.forEach(function(player) {
-          player[0].addCardToHand(this.drawCard());
-          player.addCardToHand(this.drawCard());
+          player[0].addCardToHand(that.drawCard());
+          player.addCardToHand(that.drawCard());
         });
       }
       case gameState.PLAYER: {
@@ -235,6 +240,11 @@ class GameKernel {
   drawCard() {
     if (!this.isCardsInDeck()) {
       throw new Error("No more cards remain to be drawn from");
+    }
+
+    if (!this.isCardsInDeck()) {
+      // reshuffle deck
+      this.s;
     }
 
     const [x, ...xs] = this.deck;
