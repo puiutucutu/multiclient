@@ -1,8 +1,9 @@
-import uuid4 from "uuid/v4";
+import uuid from "uuid/v4";
 import { makeDeck, shuffle } from "./functions";
+import { Player } from "./Player";
 
 function makeUniqueId() {
-  return uuidv4();
+  return uuid();
 }
 
 const defaultGameProperties = {
@@ -97,17 +98,11 @@ class GameKernel {
 
   addPlayer(playerName, buyInAmount) {
     const id = makeUniqueId();
+    const player = new Player(id, playerName, buyInAmount);
 
     this.gameProperties = {
       ...this.gameProperties,
-      players: [
-        ...this.gameProperties.players,
-        {
-          id,
-          playerName,
-          capital: buyInAmount
-        }
-      ]
+      players: [...this.gameProperties.players, player]
     };
   }
 
