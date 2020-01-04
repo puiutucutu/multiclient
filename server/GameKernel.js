@@ -122,6 +122,7 @@ class GameKernel {
 
   handleGameStateDealing() {
     console.log("GAME STATE >>> DEALING");
+
     // deal out two cards to every connected player
     const that = this;
     this.gameProperties.players.forEach(function(player) {
