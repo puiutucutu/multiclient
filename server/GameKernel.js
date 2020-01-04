@@ -29,7 +29,6 @@ const DEALING = "DEALING";
 const PLAYER = "PLAYER";
 const DEALER = "DEALING";
 
-const gameStates = [BETTING, DEALING, PLAYER, DEALER];
 const gameState = { BETTING, DEALING, PLAYER, DEALER };
 
 const defaultGameProperties = {
