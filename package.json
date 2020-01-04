@@ -14,6 +14,7 @@
     "start:server": "node -r esm ./server/index.js"
   },
   "dependencies": {
+    "core-js": "^3.6.1",
     "esm": "^3.2.25",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
