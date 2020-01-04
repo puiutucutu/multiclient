@@ -108,11 +108,14 @@ class GameKernel {
       return card; // i.e., broadcast to connected clients
     }
 
-    if (action === STAND) {
-      // continue on to next player if available, otherwise the next game stage
+    if (action === DOUBLE) {
+      // check if player has money for the double
+      // withdraw the bet money
+      // hand one card and end player turn
     }
 
-    if (action === DOUBLE) {
+    if (action === STAND) {
+      // continue on to next player if available, otherwise the next game stage
     }
   }
 
