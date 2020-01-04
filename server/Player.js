@@ -1,5 +1,4 @@
 import { cardRanks } from "../shared/types";
-import { TWO } from "../shared/types/cardRanks";
 
 /**
  * @param {CardRank} cardRank
