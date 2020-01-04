@@ -10,6 +10,14 @@ class Card {
     this.cardType = cardRank;
     this.suit = suit;
   }
+
+  getCardRank() {
+    return this.cardRank;
+  }
+
+  getCardSuit() {
+    return this.suit;
+  }
 }
 
 export { Card };
