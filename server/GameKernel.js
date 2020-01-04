@@ -27,6 +27,14 @@ const defaultSettings = {
   }
 };
 
+/**
+ * Stages:
+ * 1 - Betting
+ * 2 - Dealing (each player gets two cards, dealer gets one up and one down card)
+ * 2 - Player turn (each player attempts to improve their hand)
+ * 3 - Dealer turn (dealer attempts to make a hand)
+ * 4 - Restart
+ */
 class GameKernel {
   constructor(settings) {
     this.gameProperties = { ...defaultGameProperties };
@@ -40,6 +48,11 @@ class GameKernel {
   }
 
   addPlayer(playerName, buyInAmount) {}
+
+  /**
+   * Player can change seat to any available seat during the pre-betting stage.
+   */
+  changeSeat() {}
 
   deal() {}
 
