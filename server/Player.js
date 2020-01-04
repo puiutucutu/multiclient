@@ -28,6 +28,9 @@ class Player {
     this.hand = [...this.hand, card];
   }
 
+  /**
+   * @return {number}
+   */
   getHandValue() {
     return this.hand.reduce(function(total, card) {
       const cardValue = getCardValueFromCardRank(card.cardType);
