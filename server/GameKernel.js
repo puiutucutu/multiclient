@@ -67,6 +67,7 @@ class GameKernel {
     // determine if the cut card is hit
     switch (this.currentRound) {
       case "betting": {
+        // await all players to set their initial bet
         console.log("switching to betting round");
         break;
       }
