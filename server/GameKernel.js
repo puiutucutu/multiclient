@@ -101,13 +101,19 @@ class GameKernel {
    * @param {number} capital
    */
   addPlayer(playerName, capital) {
-    const id = makeUniqueId();
-    const player = new Player(id, playerName, capital);
+    const playerId = makeUniqueId();
+    const player = new Player(playerId, playerName, capital);
 
     this.gameProperties = {
       ...this.gameProperties,
-      players: [...this.gameProperties.players, player]
+      players: [...this.gameProperties.players, player],
+      seats: {
+        ...this.gameProperties.seats,
+        1: playerId
+      }
     };
+
+    // assign them to the first seat for now
   }
 
   /**
