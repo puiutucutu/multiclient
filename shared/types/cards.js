@@ -1,3 +1,7 @@
+/**
+ * @typedef {ACE|KING|QUEEN|JACK|TEN|NINE|EIGHT|SEVEN|SIX|FIVE|FOUR|THREE|TWO} CardRank
+ */
+
 const ACE = "ACE";
 const KING = "KING";
 const QUEEN = "QUEEN";
