@@ -11,11 +11,11 @@ class Card {
     this.suit = suit;
   }
 
-  getCardRank() {
+  getRank() {
     return this.cardRank;
   }
 
-  getCardSuit() {
+  getSuit() {
     return this.suit;
   }
 }
