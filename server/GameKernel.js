@@ -64,6 +64,15 @@ class GameKernel {
 
   play() {
     // determine if the cut card is hit
+    switch (this.currentRound) {
+      case "betting": {
+        console.log("switching to betting round");
+        break;
+      }
+      default: {
+        console.log("switching to default");
+      }
+    }
   }
 
   /**
@@ -81,12 +90,10 @@ class GameKernel {
    */
   dealerRound() {}
 
-
   /**
    * Winners are paid out.
    */
   reconciliationRound() {}
-
 
   addPlayer(playerName, buyInAmount) {
     const id = makeUniqueId();
