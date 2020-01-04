@@ -3,11 +3,11 @@ class Card {
   suit;
 
   /**
-   * @param {CardRank} cardRank
+   * @param {CardRank} rank
    * @param {Suit} suit
    */
-  constructor(cardRank, suit) {
-    this.rank = cardRank;
+  constructor(rank, suit) {
+    this.rank = rank;
     this.suit = suit;
   }
 
