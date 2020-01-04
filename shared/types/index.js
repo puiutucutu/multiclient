@@ -1,2 +1,2 @@
 export * as suits from "./suits";
-export * as cards from "./cards";
+export * as cardRanks from "./cardRanks";
