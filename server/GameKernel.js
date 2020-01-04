@@ -21,6 +21,12 @@ const defaultGameProperties = {
 const defaultSettings = {
   shoeSize: 6,
   maxHandsPerRound: 7,
+  table: {
+    bet: {
+      minimum: 10,
+      maximum: 2500
+    }
+  },
   seats: {
     1: null,
     2: null,
@@ -37,7 +43,8 @@ const defaultSettings = {
  * Game Stages:
  *
  * 1 - Betting
- * 2 - Dealing (each player gets two cards, dealer gets one up and one down card)
+ * 2 - Dealing (each player gets two cards, dealer gets one up and one down
+ * card)
  * 2 - Player turn (each player attempts to improve their hand)
  * 3 - Dealer turn (dealer attempts to make a hand)
  *
@@ -48,6 +55,8 @@ class GameKernel {
     this.settings = { ...defaultSettings, ...settings };
   }
 
+  currentRound = "betting";
+
   init() {
     this.deck = shuffle(makeDeck());
     console.log(this.deck);
@@ -57,7 +66,27 @@ class GameKernel {
     // determine if the cut card is hit
   }
 
+  /**
+   * Await player to make his bet. Check if they have enough money, if the
+   * table minimum is respected.
+   */
+  bettingRound() {}
+
+  dealingRound() {}
+
   playRound() {}
+
+  /**
+   * Dealer makes his hand.
+   */
+  dealerRound() {}
+
+
+  /**
+   * Winners are paid out.
+   */
+  reconciliationRound() {}
+
 
   addPlayer(playerName, buyInAmount) {
     const id = makeUniqueId();
