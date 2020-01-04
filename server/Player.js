@@ -85,14 +85,6 @@ function getHandValues(hand) {
 }
 
 /**
- * @param {Card[]} hand
- * @return {number[]}
- */
-function findHandValuePermutations(hand) {
-  const values = [];
-}
-
-/**
  * @param {array} xs
  * @return {array}
  * @example
