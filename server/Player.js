@@ -1,5 +1,5 @@
-import { cardRanks } from "../shared/types"
-import { TWO } from '../shared/types/cardRanks'
+import { cardRanks } from "../shared/types";
+import { TWO } from "../shared/types/cardRanks";
 
 /**
  * @param {CardRank} cardRank
@@ -19,9 +19,10 @@ function getCardValueFromCardRank(cardRank) {
     [cardRanks.TEN]: 10,
     [cardRanks.JACK]: 10,
     [cardRanks.QUEEN]: 10,
-    [cardRanks.KING]: 10,
-  }
+    [cardRanks.KING]: 10
+  };
 
+  return cardRankToValueDict[cardRank];
 }
 
 class Player {
@@ -53,16 +54,11 @@ class Player {
   }
 
   getHandValue() {
-    return this.hand.reduce(function (total, card) {
+    return this.hand.reduce(function(total, card) {
       const cardType = card.cardType;
-
-      switch () {
-
-      }
-
-      return total + card.cardType;
-
-    }, 0)
+      const cardValue = getCardValueFromCardRank(card);
+      return total + cardValue;
+    }, 0);
   }
 
   resetHand() {
