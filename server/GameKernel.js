@@ -1,6 +1,12 @@
+import uuidv4 from "uuid/v4";
 import { makeDeck, shuffle } from "./functions";
 
+function makeUniqueId() {
+  return uuidv4();
+}
+
 const defaultGameProperties = {
+  players: [],
   seats: {
     1: null,
     2: null,
@@ -15,7 +21,6 @@ const defaultGameProperties = {
 const defaultSettings = {
   shoeSize: 6,
   maxHandsPerRound: 7,
-  players: [],
   seats: {
     1: null,
     2: null,
@@ -39,7 +44,6 @@ class GameKernel {
   constructor(settings) {
     this.gameProperties = { ...defaultGameProperties };
     this.settings = { ...defaultSettings, ...settings };
-    this.players = [];
   }
 
   init() {
@@ -51,7 +55,23 @@ class GameKernel {
     // determine if the cut card is hit
   }
 
-  addPlayer(playerName, buyInAmount) {}
+  playRound() {}
+
+  addPlayer(playerName, buyInAmount) {
+    const id = makeUniqueId();
+
+    this.gameProperties = {
+      ...this.gameProperties,
+      players: [
+        ...this.gameProperties.players,
+        {
+          id,
+          playerName,
+          capital: buyInAmount
+        }
+      ]
+    };
+  }
 
   /**
    * Player can change seat to any available seat during the pre-betting stage.
@@ -61,6 +81,10 @@ class GameKernel {
   deal() {}
 
   getOccupiedSeats() {}
+
+  assignSeatToPlayer() {}
+
+  resetGame() {}
 
   getUnoccupiedSeats() {
     const unoccupiedSeats = [];
