@@ -14,6 +14,8 @@ const HIT = "HIT";
 const STAND = "STAND";
 const DOUBLE = "DOUBLE";
 
+const dealingActions = [HIT, STAND, DOUBLE];
+
 const defaultGameProperties = {
   players: [],
   seats: {
@@ -91,7 +93,21 @@ class GameKernel {
    */
   bettingRound() {}
 
-  dealingRound(playerId, action) {}
+  /**
+   * @param {string} playerId
+   * @param {DealingActions} action
+   */
+  dealingRound(playerId, action) {
+    if ([])
+      if (action === HIT) {
+      }
+
+    if (action === STAND) {
+    }
+
+    if (action === DOUBLE) {
+    }
+  }
 
   playRound() {}
 
