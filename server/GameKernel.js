@@ -6,15 +6,14 @@ function makeUniqueId() {
   return uuid();
 }
 
-/**
- * @typedef {HIT|STAND|DOUBLE} DealingActions
- */
-
 const HIT = "HIT";
 const STAND = "STAND";
 const DOUBLE = "DOUBLE";
 
-const dealingActions = [HIT, STAND, DOUBLE];
+/**
+ * @typedef {HIT|STAND|DOUBLE}
+ */
+const DealingActions = [HIT, STAND, DOUBLE];
 
 const defaultGameProperties = {
   players: [],
