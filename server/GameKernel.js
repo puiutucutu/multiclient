@@ -87,6 +87,36 @@ class GameKernel {
     }
   }
 
+  addCardToPlayerWithId(playerId) {
+    const playerId = makeUniqueId();
+    const player = this.getPlayerWithId(playerId);
+
+    this.gameProperties;
+
+    // assign them to the first seat for now
+    this.gameProperties = {
+      ...this.gameProperties,
+      players: [...this.gameProperties.players, player],
+      seats: {
+        ...this.gameProperties.seats,
+        1: playerId
+      }
+    };
+  }
+
+  /**
+   *
+   * @param {string} playerId
+   * @return {Player}
+   */
+  getPlayerWithId(playerId) {
+    const found = this.gameProperties.players.filter(function(player) {
+      return player.id === playerId;
+    });
+
+    return found.slice(0, 1);
+  }
+
   /**
    * Await player to make his bet. Check if they have enough money, if the
    * table minimum is respected.
