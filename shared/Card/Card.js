@@ -7,7 +7,7 @@ class Card {
    * @param {Suit} suit
    */
   constructor(cardRank, suit) {
-    this.cardType = cardRank;
+    this.rank = cardRank;
     this.suit = suit;
   }
 
