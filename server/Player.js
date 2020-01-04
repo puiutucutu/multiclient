@@ -43,10 +43,13 @@ class Player {
 
 /**
  * Handle card value resolving in such cases where the user has multiple aces.
+ *
+ * @param {Card[]}
+ * @return {number[]}
  */
 function getHandValues(hand) {
   if (hand.length === 0) {
-    return 0;
+    return [0];
   }
 
   const handPreparedForCartesian = hand.map(card =>
