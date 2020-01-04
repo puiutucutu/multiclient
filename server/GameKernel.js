@@ -105,7 +105,7 @@ class GameKernel {
         // deal out two cards to every connected player
         const that = this;
         this.gameProperties.players.forEach(function(player) {
-          player[0].addCardToHand(that.drawCard());
+          player.addCardToHand(that.drawCard());
           player.addCardToHand(that.drawCard());
         });
       }
