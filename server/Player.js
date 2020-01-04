@@ -33,7 +33,7 @@ class Player {
    * @return {number}
    */
   getHandValue() {
-    cardValueResolver();
+    getHandValues();
 
     return this.hand.reduce(function(total, card) {
       if (card.rank === cardRanks.ACE) {
@@ -51,32 +51,39 @@ class Player {
 /**
  * Handle card value resolving in such cases where the user has multiple aces.
  */
-function cardValueResolver() {
+function getHandValues() {
   const hand = [cards["CLUBS"].ace, cards["CLUBS"].ace, cards["CLUBS"].ten];
 
   const handPreparedForCartesian = hand.map(card =>
     getCardValueFromCardRank(card.getRank())
   );
   const possibleHands = cartesianProduct(handPreparedForCartesian);
-  const possibleHandValues = [];
+  const possibleHandValues = possibleHands.map(hand =>
+    hand.reduce((sum, a) => sum + a, 0)
+  );
 
+  console.log(
+    "%c hand",
+    "background: red; color: white; font-weight: bold",
+    hand
+  );
   console.log(
     "%c handPreparedForCartesian",
     "background: red; color: white; font-weight: bold",
     handPreparedForCartesian
   );
   console.log(
+    "%c possibleHands",
+    "background: red; color: white; font-weight: bold",
+    possibleHands
+  );
+  console.log(
     "%c possibleHandValues",
     "background: red; color: white; font-weight: bold",
     possibleHandValues
   );
-  console.log(
-    "%c hand",
-    "background: red; color: white; font-weight: bold",
-    hand
-  );
 
-  console.log(hand);
+  return possibleHandValues;
 }
 
 /**
@@ -92,7 +99,8 @@ function findHandValuePermutations(hand) {
  * @return {array}
  * @example
  *
- * cartesianProduct([["1", "11"], ["1", "11"], ["10"]]); //=> [[1,1,10],[1,11,10],[11,1,10],[11,11,10]]
+ * cartesianProduct([["1", "11"], ["1", "11"], ["10"]]); //=>
+ *   [[1,1,10],[1,11,10],[11,1,10],[11,11,10]]
  */
 function cartesianProduct(xs) {
   return xs.reduce(function(a, b) {
