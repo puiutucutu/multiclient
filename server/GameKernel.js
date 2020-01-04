@@ -103,6 +103,9 @@ class GameKernel {
     }
 
     if (action === HIT) {
+      const card = this.drawCard();
+
+      return card; // i.e., broadcast to connected clients
     }
 
     if (action === STAND) {
