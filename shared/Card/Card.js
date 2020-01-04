@@ -1,6 +1,13 @@
 class Card {
-  constructor(cardType, suit) {
-    this.cardType = cardType;
+  cardType = null;
+  suit = null;
+
+  /**
+   * @param {CardRank} cardRank
+   * @param {Suit} suit
+   */
+  constructor(cardRank, suit) {
+    this.cardType = cardRank;
     this.suit = suit;
   }
 }
