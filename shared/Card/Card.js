@@ -12,7 +12,7 @@ class Card {
   }
 
   getRank() {
-    return this.cardRank;
+    return this.rank;
   }
 
   getSuit() {
