@@ -30,6 +30,7 @@ const PLAYER = "PLAYER";
 const DEALER = "DEALING";
 
 const gameStates = [BETTING, DEALING, PLAYER, DEALER];
+const gameState = { BETTING, DEALING, PLAYER, DEALER };
 
 const defaultGameProperties = {
   players: [],
@@ -91,12 +92,12 @@ class GameKernel {
   play(playerId) {
     // determine if the cut card is hit
     switch (this.currentGameState) {
-      case "betting": {
+      case gameState.BETTING: {
         // await all players to set their initial bet
         console.log("switching to betting round");
         break;
       }
-      case "dealing": {
+      case gameState.DEALING: {
         console.log("GAME_STATE = DEALING");
         // deal out two cards to every connected player
         this.gameProperties.players.forEach(function(player) {
@@ -104,7 +105,10 @@ class GameKernel {
           player.addCardToHand(this.drawCard());
         });
       }
-      case "player": {
+      case gameState.PLAYER: {
+        this.dealingRound(playerId);
+      }
+      case gameState.DEALER: {
         this.dealingRound(playerId);
       }
       default: {
