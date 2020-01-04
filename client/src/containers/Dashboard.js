@@ -23,22 +23,22 @@ class Dashboard extends React.Component {
     console.log(gameKernel);
   }
 
-  onBetClick(e) {
+  onBetClick = e => {
     console.log("onBetClick");
-  }
+  };
 
-  onDealClick(e) {
+  onDealClick = e => {
     console.log("onDealClick");
     this.gameKernel.handleGameStateDealing();
-  }
+  };
 
-  onHit(e) {
+  onHit = e => {
     console.log("onHit");
-  }
+  };
 
-  onStand(e) {
+  onStand = e => {
     console.log("onStand");
-  }
+  };
 
   render() {
     return (
