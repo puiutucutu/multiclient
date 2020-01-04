@@ -10,6 +10,10 @@ class Player {
     this.capital = capital;
   }
 
+  getHand() {
+    return this.hand;
+  }
+
   /**
    * @param {Card} card
    */
@@ -19,10 +23,6 @@ class Player {
 
   resetHand() {
     this.hand = [];
-  }
-
-  getHand() {
-    return this.hand;
   }
 }
 
