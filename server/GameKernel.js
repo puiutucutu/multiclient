@@ -111,6 +111,7 @@ function revealHand() {
 
 const defaultGameProperties = {
   players: [],
+  dealer: [],
   seats: {
     1: null,
     2: null,
@@ -232,6 +233,11 @@ class GameKernel {
    */
   handleGameStateDealing() {
     console.log("GAME STATE >>> DEALING");
+
+    // deal cards to dealer
+
+
+    // deal cards
     const that = this;
     this.gameProperties.players.forEach(function(player) {
       player.addCardToHand(that.drawCard());
