@@ -177,7 +177,7 @@ class GameKernel {
   }
 
   reshuffle() {
-    this.shoe = makeShoe(6);
+    this.shoe = makeShoe(this.settings.shoeSize);
   }
 
   play(playerId) {
