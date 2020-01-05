@@ -35,6 +35,10 @@ class Player {
    */
   addCardToHand(card) {
     this.hand = [...this.hand, card];
+
+    if (this.isPlayerHandBust()) {
+      this.isBust = true;
+    }
   }
 
   /**
