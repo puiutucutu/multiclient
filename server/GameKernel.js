@@ -171,6 +171,10 @@ class GameKernel {
   }
 
   hitPlayer(playerId) {
+    if (!playerId) {
+      throw new Error("player id not provided");
+    }
+
     const player = this.getPlayerById(playerId);
     const card = this.drawCard();
     player.addCardToHand(card);
