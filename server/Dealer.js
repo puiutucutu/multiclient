@@ -51,6 +51,11 @@ class Dealer {
     return getHandValues(this.getHand());
   }
 
+  isBlackJack() {
+    const handValues = this.getHandValues();
+    return handValues.filter(isHandValueBlackjack) > 0;
+  }
+
   isPlayerHandBust() {
     if (this.hand.length === 0) {
       return false;
