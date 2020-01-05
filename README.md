@@ -17,6 +17,7 @@ console.log(this.gameKernel);
 window.gameKernel.handleGameStateDealing();
 window.gameKernel.gameProperties.players[0].getHandValues();
 gameKernel.hitPlayer("abc")
+gameKernel.standPlayer("abc")
 ```
 
 ## Snippets
