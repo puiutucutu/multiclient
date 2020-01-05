@@ -136,13 +136,13 @@ const defaultSettings = {
   blackjackPayoutRatio: 3 / 2,
   maxHandsPerRound: 7,
   shoeSize: 6,
-  useCutCard: true,
   table: {
     bet: {
       minimum: 10,
       maximum: 2500
     }
-  }
+  },
+  useCutCard: true
 };
 
 /**
