@@ -7,7 +7,7 @@ import { makeDeck } from "./makeDeck";
  */
 function makeShoe(numberOfDecks) {
   if (!numberOfDecks) {
-    throw new Error("missing numberOfDecks");
+    throw new Error("missing `numberOfDecks`");
   }
 
   const deck = makeDeck();
