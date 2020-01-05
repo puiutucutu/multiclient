@@ -10,6 +10,9 @@ class Player {
    */
   isBust = false;
 
+  /**
+   * @type {*[]}
+   */
   actionsAvailable = [];
 
   /**
