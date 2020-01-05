@@ -48,9 +48,11 @@ class Player {
   addCardToHand(card) {
     this.hand = [...this.hand, card];
 
-    if (this.isPlayerHandBust()) {
-      this.isBust = true;
-    }
+    this.getHandValues();
+
+    // if (this.isPlayerHandBust()) {
+    //   this.isBust = true;
+    // }
   }
 
   /**
@@ -86,31 +88,49 @@ function getHandValues(hand) {
   const handPreparedForCartesian = hand.map(card =>
     getCardValueFromCardRank(card.getRank())
   );
+
   const possibleHands = cartesianProduct(handPreparedForCartesian);
-  const possibleHandValues = possibleHands.map(hand =>
-    hand.reduce((sum, a) => sum + a, 0)
+
+  console.log(
+    "%c hand",
+    "background: red; color: white; font-weight: bold",
+    hand
+  );
+  console.log(
+    "%c handPreparedForCartesian",
+    "background: red; color: white; font-weight: bold",
+    handPreparedForCartesian
+  );
+  console.log(
+    "%c possibleHands",
+    "background: red; color: white; font-weight: bold",
+    possibleHands
   );
 
-  // console.log(
-  //   "%c hand",
-  //   "background: red; color: white; font-weight: bold",
-  //   hand
-  // );
-  // console.log(
-  //   "%c handPreparedForCartesian",
-  //   "background: red; color: white; font-weight: bold",
-  //   handPreparedForCartesian
-  // );
-  // console.log(
-  //   "%c possibleHands",
-  //   "background: red; color: white; font-weight: bold",
-  //   possibleHands
-  // );
-  // console.log(
-  //   "%c possibleHandValues",
-  //   "background: red; color: white; font-weight: bold",
-  //   possibleHandValues
-  // );
+  const possibleHandValues = possibleHands;
+
+
+  // const possibleHandValues = possibleHands.map(function(hand) {
+  //   console.log(
+  //     "%c hand",
+  //     "background: blue; color: white; font-weight: bold",
+  //     hand
+  //   );
+  //
+  //   if (hand.length === 1) {
+  //     return hand[0];
+  //   } else {
+  //     return hand.reduce(function(sum, a) {
+  //       return sum + a;
+  //     }, 0);
+  //   }
+  // });
+
+  console.log(
+    "%c possibleHandValues",
+    "background: red; color: white; font-weight: bold",
+    possibleHandValues
+  );
 
   return [...new Set(possibleHandValues)];
 }
@@ -124,16 +144,19 @@ function getHandValues(hand) {
  * cartesianProduct([["1", "11"], ["1", "11"], ["10"]]); //=>
  *   [[1,1,10],[1,11,10],[11,1,10],[11,11,10]]
  */
-function cartesianProduct(xs) {
-  return xs.reduce(function(a, b) {
-    return a.reduce(function(r, v) {
-      return r.concat(
-        b.map(function(w) {
-          return [].concat(v, w);
-        })
-      );
-    }, []);
-  });
+function cartesianProduct(arr) {
+  if (arr.length == 1) {
+    return arr[0];
+  } else {
+    var result = [];
+    var allCasesOfRest = cartesianProduct(arr.slice(1)); // recur with the rest of array
+    for (var i = 0; i < allCasesOfRest.length; i++) {
+      for (var j = 0; j < arr[0].length; j++) {
+        result.push(arr[0][j] + allCasesOfRest[i]);
+      }
+    }
+    return result;
+  }
 }
 
 /**
