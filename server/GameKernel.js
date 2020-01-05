@@ -1,14 +1,23 @@
-import uuid from "uuid/v4";
-import { makeDeck, shuffle } from "./functions";
+import { makeDeck, shuffle, uniqueId, head } from "./functions";
 import { Player } from "./Player";
 
-function makeUniqueId() {
-  return uuid();
-}
+const PLAYER_ACTIONS = {
+  HIT: "HIT",
+  STAND: "STAND",
+  DOUBLE: "DOUBLE",
+  SPLIT: "SPLIT",
+  TAKE_INSURANCE: "TAKE_INSURANCE",
+  SET_INITIAL_BET_SIZE: "SET_INITIAL_BET_SIZE"
+};
 
-function head(xs) {
-  return xs.slice(0, 1);
-}
+const DEALER_ACTIONS = [
+  "OFFER_INSURANCE",
+  "OFFER_INSURANCE",
+  "OFFER_INSURANCE",
+  "OFFER_INSURANCE",
+  "OFFER_INSURANCE",
+  "OFFER_INSURANCE"
+];
 
 /**
  * @typedef {HIT|STAND|DOUBLE} DealingActions
@@ -192,7 +201,7 @@ class GameKernel {
    * @param {number} capital
    */
   addPlayer(playerName, capital) {
-    const playerId = makeUniqueId();
+    const playerId = uniqueId();
     const player = new Player(playerId, playerName, capital);
 
     // assign them to the first seat for now
