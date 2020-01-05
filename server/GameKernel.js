@@ -212,6 +212,9 @@ class GameKernel {
       throw new Error("player id not provided");
     }
 
+    // dealer attempts to make a hand
+
+
     const player = this.getPlayerById(playerId);
     const dealer = this.gameProperties.dealer;
 
@@ -243,7 +246,6 @@ class GameKernel {
       // player winds
     }
 
-    // dealer attempts to make a hand
   }
 
   /**
