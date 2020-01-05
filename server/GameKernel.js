@@ -175,22 +175,25 @@ class GameKernel {
     const card = this.drawCard();
     player.addCardToHand(card);
 
+    console.log(player);
+    console.log(card);
+
     // perform behaviour when player busted
     if (player.isPlayerHandBust()) {
     }
 
-    // offer hitting or standing only
     this.offerPlayerActions([HIT, STAND]);
 
-    console.log(player);
-    console.log(card);
+
   }
 
   /**
    *
    * @param {[]} actions
    */
-  offerPlayerActions(actions) {}
+  offerPlayerActions(actions) {
+    if (actions)
+  }
 
   handleGameStateBetting() {
     // await all players to set their initial bet
