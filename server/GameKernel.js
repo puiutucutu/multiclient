@@ -179,10 +179,11 @@ class GameKernel {
     console.log(card);
 
     // perform behaviour when player busted
-    if (player.isPlayerHandBust()) {
+    if (player.isBust) {
+      this.offerPlayerActions([]);
+    } else {
+      this.offerPlayerActions([HIT, STAND]);
     }
-
-    this.offerPlayerActions([HIT, STAND]);
   }
 
   /**
