@@ -35,6 +35,13 @@ class Player {
     return this.hand;
   }
 
+  addInitialDrawToHand(cardOne, cardTwo) {
+    this.hand = [cardOne, cardTwo];
+    if (this.isPlayerHandBust()) {
+      this.isBust = true;
+    }
+  }
+
   /**
    * @param {Card} card
    */
