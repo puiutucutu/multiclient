@@ -1,6 +1,9 @@
 import { cardRanks } from "../shared/types";
 import { cards } from "../shared/cards";
 
+const isHandValueLegal = x => x <= 21;
+const isHandValueBlackjack = x => x === 21;
+
 class Player {
   /**
    * @type {Card[]}
@@ -38,7 +41,7 @@ class Player {
 
   isPlayerBust() {
     const handValues = this.getHandValues();
-    const handValuesValid = handValues.filter(x => x <= 21);
+    const handValuesValid = handValues.filter(isHandValueLegal);
 
     return handValuesValid.length === 0;
   }
