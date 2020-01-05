@@ -51,6 +51,15 @@ class Dealer {
     return getHandValues(this.getHand());
   }
 
+  /**
+   * @return {number}
+   */
+  getHighestHandValue() {
+    const handValues = this.getHandValues();
+    const handValuesSortedDescending = handValues.sort((a, b) => b - a);
+    return handValuesSortedDescending[0];
+  }
+
   isBlackJack() {
     const handValues = this.getHandValues();
     return handValues.filter(isHandValueBlackjack) > 0;
