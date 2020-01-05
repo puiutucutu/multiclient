@@ -1,6 +1,6 @@
 import { makeDeck, shuffle, uniqueId, head } from "./functions";
 import { Player } from "./Player";
-import { Dealer } from './Dealer'
+import { Dealer } from "./Dealer";
 
 /**
  * @typedef {HIT|STAND|DOUBLE} DealingActions
@@ -213,8 +213,6 @@ class GameKernel {
     const player = this.getPlayerById(playerId);
 
     // dealer attempts to make a hand
-
-
   }
 
   /**
@@ -235,8 +233,25 @@ class GameKernel {
   handleGameStateDealing() {
     console.log("GAME STATE >>> DEALING");
 
-    // deal cards to dealer
+    // dealer cards all around
+    const dealOrderStack = [
+      ...this.gameProperties.players,
+      this.gameProperties.dealer
+    ];
 
+    for (let cardsDealt = 0; cardsDealt < 2; cardsDealt++) {
+      dealOrderStack.map(participant => {
+        participant.addCardToHand(this.drawCard());
+      })
+    }
+
+    console.log(
+      "%c dealOrderStack",
+      "background: red; color: white; font-weight: bold",
+      dealOrderStack
+    );
+
+    // deal cards to dealer
 
     // deal cards
     const that = this;
