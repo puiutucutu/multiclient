@@ -27,6 +27,11 @@ class Participant {
   actionsAvailable = [];
 
   /**
+   * @type {Card[][]}
+   */
+  hands = [];
+
+  /**
    * @type {Card[]}
    */
   hand = [];
