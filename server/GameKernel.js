@@ -435,7 +435,7 @@ class GameKernel {
   resetHands() {
     const participants = this.getParticipants();
 
-    participants.map(function(participant) {
+    participants.forEach(function(participant) {
       participant.resetHand();
     });
   }
