@@ -306,13 +306,6 @@ class GameKernel {
     if (dealer.getUpcard() === cardRanks.ACE) {
       console.log("EMIT EVENT - DEALER_OFFER_INSURANCE");
     }
-
-
-    console.log(
-      "%c dealOrderStack",
-      "background: red; color: white; font-weight: bold",
-      dealingOrder
-    );
   }
 
   addCardToPlayerWithId(playerId, card) {
