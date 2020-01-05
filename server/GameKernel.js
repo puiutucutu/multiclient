@@ -1,4 +1,4 @@
-import { makeDeck, makeShoe, shuffle, uniqueId, head } from "./functions";
+import { makeShoe, shuffle, uniqueId, head } from "./functions";
 import { Player } from "./Player";
 import { Dealer } from "./Dealer";
 import { cardRanks } from "../shared/types";
@@ -170,7 +170,7 @@ class GameKernel {
   init() {
     this.shuffleDeck();
 
-    console.log(makeShoe(2))
+    console.log(makeShoe(6))
 
   }
 
