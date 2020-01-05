@@ -5,6 +5,9 @@ const isHandValueLegal = x => x <= 21;
 const isHandValueBlackjack = x => x === 21;
 
 class Player {
+  /**
+   * @type {boolean}
+   */
   isBust = false;
 
   /**
