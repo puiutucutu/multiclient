@@ -128,6 +128,7 @@ const defaultGameProperties = {
 const defaultSettings = {
   shoeSize: 6,
   maxHandsPerRound: 7,
+  blackjackPayoutRatio: 3/2,
   table: {
     bet: {
       minimum: 10,
@@ -212,6 +213,22 @@ class GameKernel {
     }
 
     const player = this.getPlayerById(playerId);
+    const dealer = this.gameProperties.dealer;
+
+    const playerHandValue = player.getHandValues();
+    const dealerHandValue = dealer.getHandValues();
+
+    console.log('%c LOOK HERE', 'background: blue; color: white; font-weight: bold', )
+    console.log(playerHandValue)
+    console.log(dealerHandValue)
+
+    if (player.isBlackJack() && dealer.isBlackJack()) {
+      // push
+    }
+
+    if (player.isBlackJack() && !dealer.isBlackJack()) {
+      // pay player payout ratio
+    }
 
     // dealer attempts to make a hand
   }
