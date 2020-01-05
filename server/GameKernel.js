@@ -22,7 +22,8 @@ const EVENTS = {
  */
 
 /**
- * @typedef {HIT|STAND|DOUBLE|SPLIT|TAKE_INSURANCE|SET_INITIAL_BET_SIZE} PLAYER_ACTIONS
+ * @typedef {HIT|STAND|DOUBLE|SPLIT|TAKE_INSURANCE|SET_INITIAL_BET_SIZE}
+ *   PLAYER_ACTIONS
  */
 
 const PLAYER_ACTIONS = {
@@ -234,15 +235,16 @@ class GameKernel {
     console.log("GAME STATE >>> DEALING");
 
     // dealer cards all around
-    const dealOrderStack = [
-      ...this.gameProperties.players,
+    const dealOrderStack = [].concat(
+      this.gameProperties.players,
       this.gameProperties.dealer
-    ];
+    );
 
+    const that = this;
     for (let cardsDealt = 0; cardsDealt < 2; cardsDealt++) {
-      dealOrderStack.map(participant => {
-        participant.addCardToHand(this.drawCard());
-      })
+      dealOrderStack.map(function(participant) {
+        participant.addCardToHand(that.drawCard());
+      });
     }
 
     console.log(
@@ -250,15 +252,6 @@ class GameKernel {
       "background: red; color: white; font-weight: bold",
       dealOrderStack
     );
-
-    // deal cards to dealer
-
-    // deal cards
-    const that = this;
-    this.gameProperties.players.forEach(function(player) {
-      player.addCardToHand(that.drawCard());
-      player.addCardToHand(that.drawCard());
-    });
   }
 
   addCardToPlayerWithId(playerId, card) {
