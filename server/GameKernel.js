@@ -182,7 +182,7 @@ class GameKernel {
   }
 
   getParticipants() {
-    return [].concat(this.gameProperties.players, this.gameProperties.dealer);
+    return [].concat(this.getPlayers(), this.getDealer());
   }
 
   /**
