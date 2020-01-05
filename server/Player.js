@@ -60,6 +60,11 @@ class Player {
     return getHandValues(this.getHand());
   }
 
+  getLegalHandValues() {
+    const handValues = this.getHandValues();
+    return handValues.filter(isHandValueLegal);
+  }
+
   isPlayerHandBust() {
     if (this.hand.length === 0) {
       return false;
