@@ -36,6 +36,12 @@ class Player {
     return getHandValues(this.getHand());
   }
 
+  isPlayerBust() {
+    const handValues = this.getHandValues();
+    const handValuesValid = handValues.filter(x => x <= 21);
+    return handValuesValid.length;
+  }
+
   resetHand() {
     this.hand = [];
   }
