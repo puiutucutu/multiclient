@@ -17,9 +17,16 @@ const DEALER_ACTIONS = {
   REVEAL_HAND: "REVEAL_HAND"
 };
 
+function officerInsurance() {
+  return {
+    action: DEALER_ACTIONS.OFFER_INSURANCE,
+    payload: {}
+  };
+}
+
 function checkForBlackjack() {
   return {
-    action: "CHECK_FOR_BLACKJACK",
+    action: DEALER_ACTIONS.CHECK_FOR_BLACKJACK,
     payload: {}
   };
 }
