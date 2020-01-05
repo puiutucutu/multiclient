@@ -19,7 +19,7 @@ class Dealer extends Participant {
   }
 
   /**
-   * The hole card is always the dealer's first dealt card, which is hidden
+   * The hole card is always the first card dealt to the dealer, which is hidden
    * from the player.
    *
    * @return {Card}
