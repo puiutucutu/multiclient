@@ -66,6 +66,7 @@ class Player {
   getHighestHandValue() {
     const handValues = this.getHandValues();
     const handValuesSortedDescending = handValues.sort((a, b) => b - a);
+    return handValuesSortedDescending[0];
   }
 
   isBlackJack() {
