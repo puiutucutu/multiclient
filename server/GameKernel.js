@@ -183,8 +183,6 @@ class GameKernel {
     }
 
     this.offerPlayerActions([HIT, STAND]);
-
-
   }
 
   /**
@@ -192,7 +190,8 @@ class GameKernel {
    * @param {[]} actions
    */
   offerPlayerActions(actions) {
-    if (actions)
+    if (actions) {
+    }
   }
 
   handleGameStateBetting() {
