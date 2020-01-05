@@ -20,6 +20,14 @@ class Player extends Participant {
     super(id, name);
     this.capital = capital;
   }
+
+  addCapital(x) {
+    this.capital = this.capital + x;
+  }
+
+  withdrawCapital(x) {
+    this.capital = this.capital - x;
+  }
 }
 
 export { Player };
