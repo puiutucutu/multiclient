@@ -1,41 +1,22 @@
 import { shuffle } from "./shuffle";
+import { makeDeck } from "./makeDeck";
 
-function makeShoe(deckSize) {
-  if (!deckSize) {
-    throw new Error("missing decksize");
+/**
+ * @param {number} numberOfDecks
+ * @return {Card[]}
+ */
+function makeShoe(numberOfDecks) {
+  if (!numberOfDecks) {
+    throw new Error("missing numberOfDecks");
   }
 
-  const cardsRanks = [];
-  const allCards = [];
-
-  const cards = [
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "J",
-    "Q",
-    "K",
-    "A"
-  ];
-  const deck = [];
-  for (let i = 0; i < deckSize; i++) {
-    deck.push(cards);
-    deck.push(cards);
-    deck.push(cards);
-    deck.push(cards);
+  const deck = makeDeck();
+  const finalDeck = [];
+  for (let i = 0; i < numberOfDecks; i++) {
+    finalDeck.push(deck);
   }
 
-  const xs = deck.reduce(function(acc, xs) {
-    return acc.concat(xs);
-  }, []);
-
-  return shuffle(xs);
+  return shuffle(finalDeck);
 }
 
 export { makeShoe };
