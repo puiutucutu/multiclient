@@ -12,7 +12,7 @@ const PLAYER_ACTIONS = {
 
 const DEALER_ACTIONS = {
   OFFER_INSURANCE: "OFFER_INSURANCE",
-  CHECK_FOR_BLACKJACK: "CHECK_FOR_BLACKJACK",
+  CHECK_OWN_HAND_FOR_BLACKJACK: "CHECK_OWN_HAND_FOR_BLACKJACK",
   PAY_PLAYER: "PAY_PLAYER",
   REVEAL_HAND: "REVEAL_HAND"
 };
@@ -26,7 +26,7 @@ function officerInsurance() {
 
 function checkForBlackjack() {
   return {
-    action: DEALER_ACTIONS.CHECK_FOR_BLACKJACK,
+    action: DEALER_ACTIONS.CHECK_OWN_HAND_FOR_BLACKJACK,
     payload: {}
   };
 }
