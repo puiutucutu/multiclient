@@ -156,7 +156,11 @@ const defaultSettings = {
  *
  */
 class GameKernel {
+  /**
+   * @type {Card[]}
+   */
   shoe;
+
   currentGameState = BETTING;
 
   constructor(settings) {
