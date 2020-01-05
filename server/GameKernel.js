@@ -18,7 +18,7 @@ const EVENTS = {
   DEALER_PUSH: "DEALER_PUSH",
   DEALER_DID_BUST: "DEALER_DID_BUST",
   DEALER_HAS_BLACKJACK: "DEALER_HAS_BLACKJACK",
-  DEALER_OFFICER_INSURANCE: "DEALER_OFFER_INSURANCE",
+  DEALER_OFFER_INSURANCE: "DEALER_OFFER_INSURANCE",
   PLAYER_DID_BUST: "PLAYER_DID_BUST",
   PLAYER_HAS_BLACKJACK: "PLAYER_DID_BUST"
 };
@@ -299,12 +299,12 @@ class GameKernel {
       dealer.getUpcard() === cardRanks.TEN &&
       dealer.getHoleCard() === cardRanks.ACE
     ) {
-      console.log("EMIT EVENT: DEALER_HAS_BLACKJACK");
+      console.log("EMIT EVENT - DEALER_HAS_BLACKJACK");
     }
 
     // offer insurance when dealer has ace up card
     if (dealer.getUpcard() === cardRanks.ACE) {
-      console.log("EMIT EVENT: DEALER_OFFER_INSURANCE");
+      console.log("EMIT EVENT - DEALER_OFFER_INSURANCE");
     }
 
 
