@@ -29,6 +29,18 @@ const PLAYER_ACTIONS = {
   SET_INITIAL_BET_SIZE
 };
 
+/**
+ * @typedef {HIT|STAND|DOUBLE|SPLIT|TAKE_INSURANCE} PLAYER_GAME_BEHAVIOUR
+ */
+
+const PLAYER_GAME_BEHAVIOUR = {
+  HIT,
+  STAND,
+  DOUBLE,
+  SPLIT,
+  TAKE_INSURANCE
+};
+
 const dealingActions = [HIT, STAND, DOUBLE];
 
 const OFFER_INSURANCE = "OFFER_INSURANCE";
@@ -168,6 +180,7 @@ class GameKernel {
     }
 
     // offer hitting or standing only
+    this.offerPlayerActions([HIT, STAND]);
 
     console.log(player);
     console.log(card);
@@ -175,7 +188,7 @@ class GameKernel {
 
   /**
    *
-   * @param actions
+   * @param {[]} actions
    */
   offerPlayerActions(actions) {}
 
