@@ -37,8 +37,8 @@ class Player {
   }
 
   isPlayerBust() {
-    const handValues = this.getHandValues();
-    const handValuesValid = handValues.filter(x => x <= 21);
+    const handValuesValid = this.getHandValues().filter(x => x <= 21);
+
     return handValuesValid.length === 0;
   }
 
