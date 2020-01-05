@@ -11,6 +11,7 @@ class Dealer extends Participant {
 
   /**
    * Upcard is always the dealer's second dealt card.
+   *
    * @return {Card}
    */
   getUpcard() {
@@ -20,6 +21,7 @@ class Dealer extends Participant {
   /**
    * The hole card is always the dealer's first dealt card, which is hidden
    * from the player.
+   *
    * @return {Card}
    */
   getHoleCard() {
