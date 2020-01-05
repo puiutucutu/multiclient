@@ -239,7 +239,7 @@ class GameKernel {
 
     // did dealer bust
     if (
-      player.getHighestHandValue() > dealer.getHighestHandValue()() ||
+      player.getHighestHandValue() > dealer.getHighestHandValue() ||
       dealer.isBust
     ) {
       // player winds
