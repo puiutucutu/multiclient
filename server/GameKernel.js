@@ -130,7 +130,7 @@ const defaultGameProperties = {
 const defaultSettings = {
   shoeSize: 6,
   maxHandsPerRound: 7,
-  blackjackPayoutRatio: 3/2,
+  blackjackPayoutRatio: 3 / 2,
   table: {
     bet: {
       minimum: 10,
@@ -214,17 +214,21 @@ class GameKernel {
       throw new Error("player id not provided");
     }
 
-    // dealer attempts to make a hand
-
     const player = this.getPlayerById(playerId);
     const dealer = this.gameProperties.dealer;
+
+    // dealer attempts to make a hand
+
 
     const playerHandValue = player.getHandValues();
     const dealerHandValue = dealer.getHandValues();
 
-    console.log('%c LOOK HERE', 'background: blue; color: white; font-weight: bold', )
-    console.log(playerHandValue)
-    console.log(dealerHandValue)
+    console.log(
+      "%c LOOK HERE",
+      "background: blue; color: white; font-weight: bold"
+    );
+    console.log(playerHandValue);
+    console.log(dealerHandValue);
 
     // push conditions
     if (
