@@ -187,12 +187,10 @@ class GameKernel {
   }
 
   /**
-   *
    * @param {[]} actions
    */
   offerPlayerActions(actions) {
-    if (actions) {
-    }
+    console.log(`PLAYER POSSIBLE ACTIONS: ${actions.toString()}`);
   }
 
   handleGameStateBetting() {
