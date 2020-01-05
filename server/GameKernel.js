@@ -1,7 +1,7 @@
 import { makeDeck, shuffle, uniqueId, head } from "./functions";
 import { Player } from "./Player";
 import { Dealer } from "./Dealer";
-import { cardRanks } from '../shared/types'
+import { cardRanks } from "../shared/types";
 
 /**
  * @typedef {HIT|STAND|DOUBLE} DealingActions
@@ -17,7 +17,9 @@ const SET_INITIAL_BET_SIZE = "SET_INITIAL_BET_SIZE";
 const EVENTS = {
   DEALER_PUSH: "DEALER_PUSH",
   DEALER_DID_BUST: "DEALER_DID_BUST",
-  PLAYER_DID_BUST: "PLAYER_DID_BUST"
+  DEALER_HAS_BLACKJACK: "DEALER_HAS_BLACKJACK",
+  PLAYER_DID_BUST: "PLAYER_DID_BUST",
+  PLAYER_HAS_BLACKJACK: "PLAYER_DID_BUST"
 };
 
 /**
@@ -226,7 +228,6 @@ class GameKernel {
 
     // dealer attempts to make a hand
 
-
     const playerHandValue = player.getHandValues();
     const dealerHandValue = dealer.getHandValues();
 
@@ -292,9 +293,12 @@ class GameKernel {
 
     // dealer checks for blackjack without offering insurance if a ten valued
     // upcard is shown
-    const dealerUpcard = this.gameProperties.dealer.getUpcard();
-    if (dealerUpcard === cardRanks.TEN && ) {
-
+    const dealer = this.getDealer();
+    if (
+      dealer.getUpcard() === cardRanks.TEN &&
+      dealer.getHoleCard() === cardRanks.ACE
+    ) {
+      console.log("EMIT EVENT: DEALER_HAS_BLACKJACK");
     }
 
     // offer insurance id dealer has ace up card
