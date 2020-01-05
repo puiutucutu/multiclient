@@ -433,9 +433,7 @@ class GameKernel {
   }
 
   resetHands() {
-    const participants = this.getParticipants();
-
-    participants.forEach(function(participant) {
+    this.getParticipants().forEach(function(participant) {
       participant.resetHand();
     });
   }
