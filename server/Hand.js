@@ -15,6 +15,10 @@ class Hand {
   constructor(bet) {
     this.bet = bet;
   }
+
+  getCards() {
+    return this.cards;
+  }
 }
 
 export { Hand };
