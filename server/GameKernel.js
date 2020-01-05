@@ -234,14 +234,14 @@ class GameKernel {
   handleGameStateDealing() {
     console.log("GAME STATE >>> DEALING");
 
-    const participantDealingOrder = [].concat(
+    const dealingOrder = [].concat(
       this.gameProperties.players,
       this.gameProperties.dealer
     );
 
     const that = this;
     for (let cardsDealt = 0; cardsDealt < 2; cardsDealt++) {
-      participantDealingOrder.map(function(participant) {
+      dealingOrder.map(function(participant) {
         participant.addCardToHand(that.drawCard());
       });
     }
@@ -249,7 +249,7 @@ class GameKernel {
     console.log(
       "%c dealOrderStack",
       "background: red; color: white; font-weight: bold",
-      participantDealingOrder
+      dealingOrder
     );
   }
 
