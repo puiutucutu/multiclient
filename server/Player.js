@@ -7,6 +7,11 @@ class Player extends Participant {
   capital;
 
   /**
+   * @type {number}
+   */
+  currentBet;
+
+  /**
    * @param {string} id
    * @param {string} name
    * @param {number} capital
