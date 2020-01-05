@@ -31,6 +31,15 @@ function checkForBlackjack() {
   };
 }
 
+function payPlayer(playerId) {
+  return {
+    action: DEALER_ACTIONS.PAY_PLAYER,
+    payload: {
+      playerId
+    }
+  };
+}
+
 /**
  * @typedef {HIT|STAND|DOUBLE} DealingActions
  */
