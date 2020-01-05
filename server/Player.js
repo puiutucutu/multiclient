@@ -20,9 +20,6 @@ class Player extends Participant {
     this.capital = capital;
   }
 
-  getHand() {
-    return this.hand;
-  }
 
   addInitialDrawToHand(cardOne, cardTwo) {
     this.hand = [cardOne, cardTwo];

@@ -18,9 +18,6 @@ class Dealer extends Participant {
     super(id, name);
   }
 
-  getHand() {
-    return this.hand;
-  }
 
   /**
    * @param {Card} card

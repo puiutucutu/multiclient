@@ -32,6 +32,10 @@ class Participant {
     this.id = id;
     this.name = name;
   }
+
+  getHand() {
+    return this.hand;
+  }
 }
 
 export { Participant };
