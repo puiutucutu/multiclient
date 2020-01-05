@@ -1,6 +1,6 @@
 import { cardRanks } from "../shared/types";
 import { cards } from "../shared/cards";
-import { cartesianProduct } from './functions'
+import { cartesianProduct, getCardValueFromCardRank } from "./functions";
 
 const isHandValueLegal = x => x <= 21;
 const isHandValueBlackjack = x => x === 21;
@@ -134,30 +134,6 @@ function getHandValues(hand) {
   );
 
   return [...new Set(possibleHandValues)];
-}
-
-/**
- * @param {CardRank} cardRank
- * @return {number}
- */
-function getCardValueFromCardRank(cardRank) {
-  const cardRankToValueDict = {
-    [cardRanks.ACE]: [1, 11],
-    [cardRanks.TWO]: [2],
-    [cardRanks.THREE]: [3],
-    [cardRanks.FOUR]: [4],
-    [cardRanks.FIVE]: [5],
-    [cardRanks.SIX]: [6],
-    [cardRanks.SEVEN]: [7],
-    [cardRanks.EIGHT]: [8],
-    [cardRanks.NINE]: [9],
-    [cardRanks.TEN]: [10],
-    [cardRanks.JACK]: [10],
-    [cardRanks.QUEEN]: [10],
-    [cardRanks.KING]: [10]
-  };
-
-  return cardRankToValueDict[cardRank];
 }
 
 export { Dealer };
