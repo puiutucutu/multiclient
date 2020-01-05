@@ -1,21 +1,54 @@
 import { makeDeck, shuffle, uniqueId, head } from "./functions";
 import { Player } from "./Player";
 
+/**
+ * @typedef {HIT|STAND|DOUBLE} DealingActions
+ */
+
+const HIT = "HIT";
+const STAND = "STAND";
+const DOUBLE = "DOUBLE";
+const SPLIT = "SPLIT";
+const TAKE_INSURANCE = "TAKE_INSURANCE";
+const SET_INITIAL_BET_SIZE = "SET_INITIAL_BET_SIZE";
+
+/**
+ * @typedef {BETTING|DEALING|PLAYER|DEALER} GameStates
+ */
+
 const PLAYER_ACTIONS = {
-  HIT: "HIT",
-  STAND: "STAND",
-  DOUBLE: "DOUBLE",
-  SPLIT: "SPLIT",
-  TAKE_INSURANCE: "TAKE_INSURANCE",
-  SET_INITIAL_BET_SIZE: "SET_INITIAL_BET_SIZE"
+  HIT,
+  STAND,
+  DOUBLE,
+  SPLIT,
+  TAKE_INSURANCE,
+  SET_INITIAL_BET_SIZE
 };
 
+const dealingActions = [HIT, STAND, DOUBLE];
+
+const OFFER_INSURANCE = "OFFER_INSURANCE";
+const CHECK_OWN_HAND_FOR_BLACKJACK = "CHECK_OWN_HAND_FOR_BLACKJACK";
+const PAY_PLAYER = "PAY_PLAYER";
+const REVEAL_HAND = "REVEAL_HAND";
+
 const DEALER_ACTIONS = {
-  OFFER_INSURANCE: "OFFER_INSURANCE",
-  CHECK_OWN_HAND_FOR_BLACKJACK: "CHECK_OWN_HAND_FOR_BLACKJACK",
-  PAY_PLAYER: "PAY_PLAYER",
-  REVEAL_HAND: "REVEAL_HAND"
+  OFFER_INSURANCE,
+  CHECK_OWN_HAND_FOR_BLACKJACK,
+  PAY_PLAYER,
+  REVEAL_HAND
 };
+
+/**
+ * @typedef {BETTING|DEALING|PLAYER|DEALER} GameStates
+ */
+
+const BETTING = "BETTING";
+const DEALING = "DEALING";
+const PLAYER = "PLAYER";
+const DEALER = "DEALER";
+
+const gameState = { BETTING, DEALING, PLAYER, DEALER };
 
 function officerInsurance() {
   return {
@@ -46,27 +79,6 @@ function revealHand() {
     payload: {}
   };
 }
-
-/**
- * @typedef {HIT|STAND|DOUBLE} DealingActions
- */
-
-const HIT = "HIT";
-const STAND = "STAND";
-const DOUBLE = "DOUBLE";
-
-const dealingActions = [HIT, STAND, DOUBLE];
-
-/**
- * @typedef {BETTING|DEALING|PLAYER|DEALER} GameStates
- */
-
-const BETTING = "BETTING";
-const DEALING = "DEALING";
-const PLAYER = "PLAYER";
-const DEALER = "DEALER";
-
-const gameState = { BETTING, DEALING, PLAYER, DEALER };
 
 const defaultGameProperties = {
   players: [],
@@ -143,10 +155,25 @@ class GameKernel {
   }
 
   hitPlayer(playerId) {
+    const player = this.getPlayerById(playerId);
+    const card = this.drawCard();
+    player.addCardToHand(card);
 
+    // perform behaviour when player busted
+    if (player.isPlayerHandBust()) {
+    }
+
+    // offer hitting or standing only
+
+    console.log(player);
+    console.log(card);
   }
 
-
+  /**
+   *
+   * @param actions
+   */
+  offerPlayerActions(actions) {}
 
   handleGameStateBetting() {
     // await all players to set their initial bet
@@ -179,7 +206,7 @@ class GameKernel {
       return player.id === playerId;
     });
 
-    return head(found);
+    return head(found)[0];
   }
 
   /**
