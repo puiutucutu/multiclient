@@ -16,6 +16,15 @@ class Dealer extends Participant {
   getUpcard() {
     return this.getHand()[1];
   }
+
+  /**
+   * The hole card is always the dealer's first dealt card, which is hidden
+   * from the player.
+   * @return {Card}
+   */
+  getHoleCard() {
+    return this.getHand()[0];
+  }
 }
 
 export { Dealer };
