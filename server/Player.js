@@ -10,6 +10,8 @@ class Player {
    */
   isBust = false;
 
+  actionsAvailable = [];
+
   /**
    * @type {Card[]}
    */
