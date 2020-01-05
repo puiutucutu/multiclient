@@ -1,5 +1,15 @@
 class Participant {
   /**
+   * @type {string}
+   */
+  id;
+
+  /**
+   * @type {string}
+   */
+  name;
+
+  /**
    * @type {boolean}
    */
   isBust = false;
