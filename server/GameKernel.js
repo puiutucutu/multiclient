@@ -156,6 +156,7 @@ const defaultSettings = {
  *
  */
 class GameKernel {
+  shoe;
   currentGameState = BETTING;
 
   constructor(settings) {
@@ -168,14 +169,11 @@ class GameKernel {
   }
 
   init() {
-    this.shuffleDeck();
-
-    console.log(makeShoe(6))
-
+    this.reshuffle();
   }
 
-  shuffleDeck() {
-    this.deck = shuffle(makeDeck());
+  reshuffle() {
+    this.shoe = makeShoe(6);
   }
 
   play(playerId) {
@@ -423,20 +421,20 @@ class GameKernel {
   }
 
   isCardsInDeck() {
-    return this.deck.length > 0;
+    return this.shoe.length > 0;
   }
 
   getCardsRemaining() {
-    return this.deck.length;
+    return this.shoe.length;
   }
 
   drawCard() {
     if (!this.isCardsInDeck()) {
-      console.log("No more cards left to drawn from; shuffling deck");
+      console.log("No more cards left to drawn from; shuffling shoe");
       this.shuffleDeck();
     }
 
-    const [x, ...xs] = this.deck;
+    const [x, ...xs] = this.shoe;
     this.deck = xs;
 
     return x;
