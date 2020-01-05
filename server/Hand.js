@@ -5,6 +5,11 @@ class Hand {
   bet;
 
   /**
+   * @type {Card[]}
+   */
+  cards;
+
+  /**
    * @param {number} bet
    */
   constructor(bet) {
