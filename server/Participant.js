@@ -56,6 +56,9 @@ class Participant {
     }
   }
 
+  /**
+   * @return {Card[]}
+   */
   getHand() {
     return this.hand;
   }
