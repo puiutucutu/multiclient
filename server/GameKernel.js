@@ -133,9 +133,9 @@ const defaultGameProperties = {
 };
 
 const defaultSettings = {
-  shoeSize: 6,
-  maxHandsPerRound: 7,
   blackjackPayoutRatio: 3 / 2,
+  maxHandsPerRound: 7,
+  shoeSize: 6,
   table: {
     bet: {
       minimum: 10,
