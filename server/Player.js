@@ -60,6 +60,11 @@ class Player {
     return getHandValues(this.getHand());
   }
 
+  isBlackJack() {
+    const handValues = this.getHandValues();
+    return handValues.filter(isHandValueBlackjack) > 0;
+  }
+
   getLegalHandValues() {
     const handValues = this.getHandValues();
     return handValues.filter(isHandValueLegal);
