@@ -234,6 +234,7 @@ class GameKernel {
   handleGameStateDealing() {
     console.log("GAME STATE >>> DEALING");
 
+    // players are dealt first, dealer is dealt last
     const dealingOrder = [].concat(
       this.gameProperties.players,
       this.gameProperties.dealer
