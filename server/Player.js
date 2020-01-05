@@ -1,9 +1,11 @@
 import { cardRanks } from "../shared/types";
 import { cards } from "../shared/cards";
-import { cartesianProduct, getCardValueFromCardRank } from './functions'
-
-const isHandValueLegal = x => x <= 21;
-const isHandValueBlackjack = x => x === 21;
+import {
+  cartesianProduct,
+  getCardValueFromCardRank,
+  isHandValueBlackjack,
+  isHandValueLegal
+} from "./functions";
 
 class Player {
   /**
