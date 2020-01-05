@@ -169,9 +169,21 @@ class GameKernel {
     this.settings = { ...defaultSettings, ...settings };
   }
 
+  /**
+   * Utility Functions
+   */
+
   getDealer() {
     return this.gameProperties.dealer;
   }
+
+  getParticipants() {
+    return [].concat(this.gameProperties.players, this.gameProperties.dealer);
+  }
+
+  /**
+   * Core Logic
+   */
 
   init() {
     this.reshuffle();
@@ -412,7 +424,16 @@ class GameKernel {
 
   assignSeatToPlayer() {}
 
-  resetGame() {}
+  resetGame() {
+    this.resetHands();
+  }
+
+  resetHands() {
+    const participants = this.getParticipants();
+    participants.map(function(participant) {
+      participant.resetHand();
+    });
+  }
 
   getUnoccupiedSeats() {
     const unoccupiedSeats = [];
