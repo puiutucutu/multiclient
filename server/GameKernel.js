@@ -332,7 +332,9 @@ class GameKernel {
     ) {
       console.log("EMIT EVENT - DEALER_HAS_BLACKJACK");
       // remove capital from player
-      this.getPlayers().forEach(function(player) {});
+      this.getPlayers().forEach(function(player) {
+        player.withdrawCapital(1);
+      });
     }
 
     // offer insurance when dealer has ace up card
