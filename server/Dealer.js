@@ -1,5 +1,7 @@
 import { cardRanks } from "../shared/types";
 import { cards } from "../shared/cards";
+import { Participant } from "./Participant";
+
 import {
   cartesianProduct,
   getCardValueFromCardRank,
@@ -7,29 +9,13 @@ import {
   isHandValueLegal
 } from "./functions";
 
-class Dealer {
-  /**
-   * @type {boolean}
-   */
-  isBust = false;
-
-  /**
-   * @type {*[]}
-   */
-  actionsAvailable = [];
-
-  /**
-   * @type {Card[]}
-   */
-  hand = [];
-
+class Dealer extends Participant {
   /**
    * @param {string} id
    * @param {string} name
    */
   constructor(id, name) {
-    this.id = id;
-    this.name = name;
+    super(id, name);
   }
 
   getHand() {
