@@ -460,7 +460,7 @@ class GameKernel {
   drawCard() {
     if (!this.isCardsInDeck()) {
       console.log("No more cards left to drawn from; shuffling shoe");
-      this.shuffleDeck();
+      this.reshuffle();
     }
 
     const [x, ...xs] = this.shoe;
