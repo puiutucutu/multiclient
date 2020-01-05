@@ -203,6 +203,13 @@ class GameKernel {
     }
   }
 
+  standPlayer(playerId) {
+    if (!playerId) {
+      throw new Error("player id not provided");
+    }
+
+  }
+
   /**
    * @param {[]} actions
    */
