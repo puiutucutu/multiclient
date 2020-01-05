@@ -18,6 +18,7 @@ const EVENTS = {
   DEALER_PUSH: "DEALER_PUSH",
   DEALER_DID_BUST: "DEALER_DID_BUST",
   DEALER_HAS_BLACKJACK: "DEALER_HAS_BLACKJACK",
+  DEALER_OFFICER_INSURANCE: "DEALER_OFFER_INSURANCE",
   PLAYER_DID_BUST: "PLAYER_DID_BUST",
   PLAYER_HAS_BLACKJACK: "PLAYER_DID_BUST"
 };
@@ -303,7 +304,7 @@ class GameKernel {
 
     // offer insurance when dealer has ace up card
     if (dealer.getUpcard() === cardRanks.ACE) {
-
+      console.log("EMIT EVENT: DEALER_OFFER_INSURANCE");
     }
 
 
