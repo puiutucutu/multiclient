@@ -1,5 +1,6 @@
 import { makeDeck, shuffle, uniqueId, head } from "./functions";
 import { Player } from "./Player";
+import { Dealer } from './Dealer'
 
 /**
  * @typedef {HIT|STAND|DOUBLE} DealingActions
@@ -111,7 +112,7 @@ function revealHand() {
 
 const defaultGameProperties = {
   players: [],
-  dealer: [],
+  dealer: new Dealer("dealer", uniqueId()),
   seats: {
     1: null,
     2: null,
