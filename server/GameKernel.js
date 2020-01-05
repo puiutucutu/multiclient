@@ -119,7 +119,13 @@ function revealHand() {
 }
 
 const defaultGameProperties = {
+  /**
+   * @type {Player[]}
+   */
   players: [],
+  /**
+   * @type {Dealer}
+   */
   dealer: new Dealer("dealer", uniqueId()),
   seats: {
     1: null,
@@ -325,6 +331,8 @@ class GameKernel {
       dealer.getHoleCard() === cardRanks.ACE
     ) {
       console.log("EMIT EVENT - DEALER_HAS_BLACKJACK");
+      // remove capital from player
+      this.getPlayers().forEach(function(player) {});
     }
 
     // offer insurance when dealer has ace up card
