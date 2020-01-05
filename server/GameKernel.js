@@ -40,6 +40,13 @@ function payPlayer(playerId) {
   };
 }
 
+function revealHand() {
+  return {
+    action: DEALER_ACTIONS.REVEAL_HAND,
+    payload: {}
+  };
+}
+
 /**
  * @typedef {HIT|STAND|DOUBLE} DealingActions
  */
