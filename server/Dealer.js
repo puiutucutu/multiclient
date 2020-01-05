@@ -1,5 +1,6 @@
 import { cardRanks } from "../shared/types";
 import { cards } from "../shared/cards";
+import { cartesianProduct } from './functions'
 
 const isHandValueLegal = x => x <= 21;
 const isHandValueBlackjack = x => x === 21;
@@ -133,27 +134,6 @@ function getHandValues(hand) {
   );
 
   return [...new Set(possibleHandValues)];
-}
-
-/**
- * @param {array} xs
- * @return {array}
- * @example
- * @see https://stackoverflow.com/a/4331218
- *
- * cartesianProduct([["1", "11"], ["1", "11"], ["10"]]); //=>
- *   [[1,1,10],[1,11,10],[11,1,10],[11,11,10]]
- */
-function cartesianProduct(xs) {
-  return xs.reduce(function(a, b) {
-    return a.reduce(function(r, v) {
-      return r.concat(
-        b.map(function(w) {
-          return [].concat(v, w);
-        })
-      );
-    }, []);
-  });
 }
 
 /**
