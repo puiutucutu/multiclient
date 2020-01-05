@@ -173,6 +173,10 @@ class GameKernel {
    * Utility Functions
    */
 
+  getPlayers() {
+    return this.gameProperties.players;
+  }
+
   getDealer() {
     return this.gameProperties.dealer;
   }
