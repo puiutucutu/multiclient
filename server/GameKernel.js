@@ -301,7 +301,11 @@ class GameKernel {
       console.log("EMIT EVENT: DEALER_HAS_BLACKJACK");
     }
 
-    // offer insurance id dealer has ace up card
+    // offer insurance when dealer has ace up card
+    if (dealer.getUpcard() === cardRanks.ACE) {
+
+    }
+
 
     console.log(
       "%c dealOrderStack",
