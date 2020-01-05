@@ -32,7 +32,7 @@ class Player {
   /**
    * @return {number[]}
    */
-  getHandValue() {
+  getHandValues() {
     return getHandValues(this.getHand());
   }
 
