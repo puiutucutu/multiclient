@@ -16,10 +16,16 @@ class Hand {
     this.bet = bet;
   }
 
+  /**
+   * @return {number}
+   */
   getBet() {
     return this.bet;
   }
 
+  /**
+   * @return {Card[]}
+   */
   getCards() {
     return this.cards;
   }
