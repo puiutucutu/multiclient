@@ -222,12 +222,25 @@ class GameKernel {
     console.log(playerHandValue)
     console.log(dealerHandValue)
 
-    if (player.isBlackJack() && dealer.isBlackJack()) {
+    // push conditions
+    if (
+      (player.isBlackJack() && dealer.isBlackJack()) ||
+      (player.isBlackJack() && dealer.isBlackJack())
+    ) {
       // push
     }
 
+    // player natural blackjack
     if (player.isBlackJack() && !dealer.isBlackJack()) {
       // pay player payout ratio
+    }
+
+    // did dealer bust
+    if (
+      player.getHighestHandValue() > dealer.getHighestHandValue()() ||
+      dealer.isBust
+    ) {
+      // player winds
     }
 
     // dealer attempts to make a hand
