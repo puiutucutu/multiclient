@@ -16,6 +16,10 @@ class Hand {
     this.bet = bet;
   }
 
+  getBet() {
+    return this.bet;
+  }
+
   getCards() {
     return this.cards;
   }
