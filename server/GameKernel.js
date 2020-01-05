@@ -142,6 +142,12 @@ class GameKernel {
     }
   }
 
+  hitPlayer(playerId) {
+
+  }
+
+
+
   handleGameStateBetting() {
     // await all players to set their initial bet
     console.log("GAME STATE >>> BETTING");
