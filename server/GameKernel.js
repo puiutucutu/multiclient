@@ -1,6 +1,7 @@
 import { makeDeck, shuffle, uniqueId, head } from "./functions";
 import { Player } from "./Player";
 import { Dealer } from "./Dealer";
+import { cardRanks } from '../shared/types'
 
 /**
  * @typedef {HIT|STAND|DOUBLE} DealingActions
@@ -158,6 +159,10 @@ class GameKernel {
     this.settings = { ...defaultSettings, ...settings };
   }
 
+  getDealer() {
+    return this.gameProperties.dealer;
+  }
+
   init() {
     this.shuffleDeck();
   }
@@ -200,6 +205,8 @@ class GameKernel {
 
     console.log(player);
     console.log(card);
+
+    // payout natural blackjack immediately
 
     // perform behaviour when player busted
     if (player.isBust) {
@@ -282,6 +289,15 @@ class GameKernel {
         participant.addCardToHand(that.drawCard());
       });
     }
+
+    // dealer checks for blackjack without offering insurance if a ten valued
+    // upcard is shown
+    const dealerUpcard = this.gameProperties.dealer.getUpcard();
+    if (dealerUpcard === cardRanks.TEN && ) {
+
+    }
+
+    // offer insurance id dealer has ace up card
 
     console.log(
       "%c dealOrderStack",
