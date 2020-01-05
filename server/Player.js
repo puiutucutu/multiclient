@@ -39,7 +39,7 @@ class Player {
     return getHandValues(this.getHand());
   }
 
-  isPlayerBust() {
+  isPlayerHandBust() {
     const handValues = this.getHandValues();
     const handValuesValid = handValues.filter(isHandValueLegal);
 
