@@ -23,7 +23,6 @@ class Dealer {
   /**
    * @param {string} id
    * @param {string} name
-   * @param {number} capital
    */
   constructor(id, name) {
     this.id = id;
