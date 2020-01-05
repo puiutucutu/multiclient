@@ -13,7 +13,7 @@ function makeShoe(numberOfDecks) {
   const deck = makeDeck();
   const shoe = [];
   for (let i = 0; i < numberOfDecks; i++) {
-    shoe.push(deck);
+    shoe.push(...deck);
   }
 
   return shuffle(shoe);
