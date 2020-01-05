@@ -12,6 +12,10 @@ const SPLIT = "SPLIT";
 const TAKE_INSURANCE = "TAKE_INSURANCE";
 const SET_INITIAL_BET_SIZE = "SET_INITIAL_BET_SIZE";
 
+const EVENTS = {
+  PLAYER_DID_BUST: "PLAYER_DID_BUST"
+};
+
 /**
  * @typedef {BETTING|DEALING|PLAYER|DEALER} GameStates
  */
@@ -65,6 +69,15 @@ const PLAYER = "PLAYER";
 const DEALER = "DEALER";
 
 const gameState = { BETTING, DEALING, PLAYER, DEALER };
+
+function playerDidBustAction(playerId) {
+  return {
+    action: EVENTS.PLAYER_DID_BUST,
+    payload: {
+      playerId
+    }
+  };
+}
 
 function officerInsurance() {
   return {
