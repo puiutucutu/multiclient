@@ -276,6 +276,8 @@ class GameKernel {
 
   /**
    * Deal out two cards to every connected player.
+   *
+   * @startRound
    */
   handleGameStateDealing() {
     console.log("GAME STATE >>> DEALING");
